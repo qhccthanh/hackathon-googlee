@@ -15,5 +15,5 @@ target 'Hackathon-Googlee' do
     pod 'Firebase/Messaging'
     pod 'Google/SignIn'
     pod 'GooglePlacePicker'
-    pod 'BSImagePicker'
+    
 end

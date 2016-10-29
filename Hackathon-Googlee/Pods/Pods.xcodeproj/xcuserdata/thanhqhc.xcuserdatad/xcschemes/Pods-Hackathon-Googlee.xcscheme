@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5B467A8D64CDDB396B215C0774B3A565"
+               BlueprintIdentifier = "8AC7E914EE1D69DB91967DBD4C77F44C"
                BuildableName = "Pods_Hackathon_Googlee.framework"
                BlueprintName = "Pods-Hackathon-Googlee"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5B467A8D64CDDB396B215C0774B3A565"
+            BlueprintIdentifier = "8AC7E914EE1D69DB91967DBD4C77F44C"
             BuildableName = "Pods_Hackathon_Googlee.framework"
             BlueprintName = "Pods-Hackathon-Googlee"
             ReferencedContainer = "container:Pods.xcodeproj">

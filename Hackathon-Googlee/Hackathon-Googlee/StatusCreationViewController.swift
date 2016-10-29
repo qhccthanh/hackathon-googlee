@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 import GooglePlaces
 import GoogleMaps
-import BSImagePicker
 import Photos
 
 class CBButton: UIButton {
@@ -109,25 +108,25 @@ class StatusCreationViewController: CTViewController {
                 self.imagePickerController.sourceType = .photoLibrary
                 
 //                self.navigationController?.present(self.imagePickerController, animated: true, completion: nil)
-                let vc = BSImagePickerViewController()
-                
-                self.bs_presentImagePickerController(vc, animated: true,
-                                                select: { (asset: PHAsset) -> Void in
-                                                    // User selected an asset.
-                                                    // Do something with it, start upload perhaps?
-                    }, deselect: { (asset: PHAsset) -> Void in
-                        // User deselected an assets.
-                        // Do something, cancel upload?
-                    }, cancel: { (assets: [PHAsset]) -> Void in
-                        // User cancelled. And this where the assets currently selected.
-                    }, finish: { (assets: [PHAsset]) -> Void in
-                        // User finished with these assets
-                        print(assets)
-                        self.numberImages = assets
-                        DispatchQueue.main.async {
-                            self.imaegCollectionView.reloadData()
-                        }
-                }, completion: nil)
+//                let vc = BSImagePickerViewController()
+//                
+//                self.bs_presentImagePickerController(vc, animated: true,
+//                                                select: { (asset: PHAsset) -> Void in
+//                                                    // User selected an asset.
+//                                                    // Do something with it, start upload perhaps?
+//                    }, deselect: { (asset: PHAsset) -> Void in
+//                        // User deselected an assets.
+//                        // Do something, cancel upload?
+//                    }, cancel: { (assets: [PHAsset]) -> Void in
+//                        // User cancelled. And this where the assets currently selected.
+//                    }, finish: { (assets: [PHAsset]) -> Void in
+//                        // User finished with these assets
+//                        print(assets)
+//                        self.numberImages = assets
+//                        DispatchQueue.main.async {
+//                            self.imaegCollectionView.reloadData()
+//                        }
+//                }, completion: nil)
 
             }))
             
