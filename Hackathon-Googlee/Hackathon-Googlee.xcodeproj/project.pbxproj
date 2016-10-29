@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6D5C0DA7A2537AEB3761C6B1 /* Pods_Hackathon_Googlee.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ACE5B95BD1FDE7B7B7E2EA4 /* Pods_Hackathon_Googlee.framework */; };
+		BC2300101DC481E2006AE397 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC23000F1DC481E2006AE397 /* LocationManager.swift */; };
 		BCD24DD81DC4415500EBB86F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD24DD71DC4415500EBB86F /* LoginViewController.swift */; };
 		BCD24DDA1DC441A800EBB86F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD24DD91DC441A800EBB86F /* MainViewController.swift */; };
 		BCD24DDC1DC441CC00EBB86F /* StatusDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD24DDB1DC441CC00EBB86F /* StatusDetailViewController.swift */; };
@@ -126,6 +127,7 @@
 
 /* Begin PBXFileReference section */
 		8ACE5B95BD1FDE7B7B7E2EA4 /* Pods_Hackathon_Googlee.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hackathon_Googlee.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC23000F1DC481E2006AE397 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		BCD24DD71DC4415500EBB86F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BCD24DD91DC441A800EBB86F /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		BCD24DDB1DC441CC00EBB86F /* StatusDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusDetailViewController.swift; sourceTree = "<group>"; };
@@ -527,6 +529,7 @@
 		F4DA8CDD1DC44CA600350FE5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				BC23000F1DC481E2006AE397 /* LocationManager.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -749,6 +752,7 @@
 			files = (
 				BCD24DDA1DC441A800EBB86F /* MainViewController.swift in Sources */,
 				F43EAB161DC4401B00E3AFFB /* Int+Extension.swift in Sources */,
+				BC2300101DC481E2006AE397 /* LocationManager.swift in Sources */,
 				F43EAB171DC4401B00E3AFFB /* JLToast.swift in Sources */,
 				F43EAB251DC4401B00E3AFFB /* Utility.swift in Sources */,
 				F43EAB1D1DC4401B00E3AFFB /* STPopupController.m in Sources */,
