@@ -19,6 +19,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>LiquidFloatingActionButton.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Hackathon-Googlee.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,12 +42,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5B467A8D64CDDB396B215C0774B3A565</key>
+		<key>4BCE15B65BE1423E31A139A48360119E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>8AA3DDB8797222294E1288CB197A8347</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A87239D30E5FB9EE540B32B7D8054CE2</key>
 		<dict>
 			<key>primary</key>
 			<true/>

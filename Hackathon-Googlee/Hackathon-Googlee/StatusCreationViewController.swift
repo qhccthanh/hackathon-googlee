@@ -40,6 +40,11 @@ class StatusCreationViewController: CTViewController {
         self.imageButton.contentEdgeInsets = UIEdgeInsetsMake(categoriesButton.contentEdgeInsets.top, 8, categoriesButton.contentEdgeInsets.bottom, 8)
         
         textView.text = "Mô tả ..."
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(endEditing)))
+    }
+    
+    func endEditing() {
+        self.view.endEditing(true)
     }
     
     override func didReceiveMemoryWarning() {
@@ -53,6 +58,7 @@ class StatusCreationViewController: CTViewController {
     }
     
     @IBAction func addStatusAction(_ sender: AnyObject!) {
+        endEditing()
         if (LocationManager.locationManager.location != nil) {
             let dict = NSMutableDictionary()
             
@@ -89,16 +95,17 @@ class StatusCreationViewController: CTViewController {
             
             print(newPost)
             newPost.pushData2Server()
+            _ = self.navigationController?.popViewController(animated: true)
         }
     }
 
     
     @IBAction func pickCategoriesAction(_ sender: AnyObject!) {
-        
+        endEditing()
     }
     
     @IBAction func pickImageAction(_ sender: AnyObject!) {
-        
+        endEditing()
         if #available(iOS 8.0, *) {
             
             let alertController = UIAlertController(title: "Googlee".localized, message: "Chọn chế độ", preferredStyle: .actionSheet)
@@ -177,8 +184,12 @@ class StatusCreationViewController: CTViewController {
     var placePicker: GMSPlacePicker?
     
     @IBAction func pickPlaceAction(_ sender: AnyObject!) {
+        endEditing()
+        var center = CLLocationCoordinate2DMake(10.7639531, 106.6565973)
+        if let location = LocationManager.locationManager.location {
+            center = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
+        }
         
-        let center = CLLocationCoordinate2DMake(51.5108396, -0.0922251)
         let northEast = CLLocationCoordinate2DMake(center.latitude + 0.001, center.longitude + 0.001)
         let southWest = CLLocationCoordinate2DMake(center.latitude - 0.001, center.longitude - 0.001)
         let viewport = GMSCoordinateBounds(coordinate: northEast, coordinate: southWest)

@@ -16,4 +16,5 @@ target 'Hackathon-Googlee' do
     pod 'Google/SignIn'
     pod 'GooglePlacePicker'
     pod 'BSImagePicker'
+    pod 'LiquidFloatingActionButton'
 end

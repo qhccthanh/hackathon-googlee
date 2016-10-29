@@ -79,6 +79,7 @@ PODS:
   - GoogleSymbolUtilities (1.1.1)
   - GoogleUtilities (1.3.1):
     - GoogleSymbolUtilities (~> 1.0)
+  - LiquidFloatingActionButton (1.2.0)
   - UIImageViewModeScaleAspect (1.5)
 
 DEPENDENCIES:
@@ -92,6 +93,7 @@ DEPENDENCIES:
   - GoogleMaps
   - GooglePlacePicker
   - GooglePlaces
+  - LiquidFloatingActionButton
 
 SPEC CHECKSUMS:
   BSGridCollectionViewLayout: 8f12c8e1e08c47057f5a39a6828f4395f043d78f
@@ -116,8 +118,9 @@ SPEC CHECKSUMS:
   GoogleSignIn: 09036ed61f8e75f1424100d63f7719480b2428c3
   GoogleSymbolUtilities: 33117db1b5f290c6fbf259585e4885b4c84b98d7
   GoogleUtilities: 56c5ac05b7aa5dc417a1bb85221a9516e04d7032
+  LiquidFloatingActionButton: 9c28961915754e08cf596ea6bdd60f9cd949f172
   UIImageViewModeScaleAspect: 11a790a0b9d248a13dc63e3a78991f1463b6d84e
 
-PODFILE CHECKSUM: 5388cd1bbbaeff2dceff74bdb387803b912a0aaf
+PODFILE CHECKSUM: c5af5e572ceba64a5559d7bea4688d88583edd14
 
 COCOAPODS: 1.0.1
