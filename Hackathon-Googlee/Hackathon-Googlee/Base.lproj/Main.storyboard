@@ -107,26 +107,26 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="InfoCell" rowHeight="96" id="8kl-AR-oL1">
-                                        <rect key="frame" x="0.0" y="181" width="320" height="96"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="InfoCell" rowHeight="102" id="8kl-AR-oL1">
+                                        <rect key="frame" x="0.0" y="181" width="320" height="102"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8kl-AR-oL1" id="U1K-F7-2y0">
-                                            <frame key="frameInset" width="320" height="95"/>
+                                            <frame key="frameInset" width="320" height="101"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bar-96" translatesAutoresizingMaskIntoConstraints="NO" id="A7X-1a-TVo">
+                                                <imageView userInteractionEnabled="NO" tag="8" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bar-96" translatesAutoresizingMaskIntoConstraints="NO" id="A7X-1a-TVo">
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="A7X-1a-TVo" secondAttribute="height" multiplier="1:1" id="ba8-9o-mMA"/>
                                                         <constraint firstAttribute="height" constant="50" id="pr1-7E-9wq"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gxb-Mw-fnC">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Content" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gxb-Mw-fnC">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6qG-E6-5Ki">
-                                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="6" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Categories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6qG-E6-5Ki">
+                                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -138,19 +138,19 @@
                                                                 <constraint firstAttribute="height" id="h9r-Yh-jqZ"/>
                                                             </constraints>
                                                         </view>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ziC-sn-oRb">
+                                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ziC-sn-oRb" customClass="CBButton" customModule="Hackathon_Googlee" customModuleProvider="target">
                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                            <state key="normal" title=" Quan tâm" image="Christmas Star">
+                                                            <state key="normal" title=" Quan tâm" image="Christmas StarUn">
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </state>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cge-Ob-bx5">
+                                                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cge-Ob-bx5" customClass="CBButton" customModule="Hackathon_Googlee" customModuleProvider="target">
                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                            <state key="normal" title=" Tham gia" image="Joining Queue Filled-50">
+                                                            <state key="normal" title=" Tham gia" image="Joining Queue-50">
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </state>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6sr-Cf-ZGq">
+                                                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6sr-Cf-ZGq" customClass="CBButton" customModule="Hackathon_Googlee" customModuleProvider="target">
                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                             <state key="normal" title=" Chia sẽ" image="Link-48">
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -159,7 +159,7 @@
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstItem="6sr-Cf-ZGq" firstAttribute="leading" secondItem="cge-Ob-bx5" secondAttribute="trailing" constant="8" id="1mx-zi-SGd"/>
+                                                        <constraint firstItem="6sr-Cf-ZGq" firstAttribute="leading" secondItem="cge-Ob-bx5" secondAttribute="trailing" constant="5" id="1mx-zi-SGd"/>
                                                         <constraint firstItem="rrn-4v-rUF" firstAttribute="top" secondItem="Vz2-8N-K24" secondAttribute="top" id="1qC-Kv-Ad2"/>
                                                         <constraint firstItem="6sr-Cf-ZGq" firstAttribute="top" secondItem="cge-Ob-bx5" secondAttribute="top" id="8mK-Zl-KU2"/>
                                                         <constraint firstItem="cge-Ob-bx5" firstAttribute="width" secondItem="ziC-sn-oRb" secondAttribute="width" id="Sqm-Pv-UD2"/>
@@ -172,18 +172,23 @@
                                                         <constraint firstItem="ziC-sn-oRb" firstAttribute="top" secondItem="rrn-4v-rUF" secondAttribute="bottom" constant="3" id="oEQ-xv-1jJ"/>
                                                         <constraint firstItem="6sr-Cf-ZGq" firstAttribute="width" secondItem="cge-Ob-bx5" secondAttribute="width" id="qN5-qj-Jih"/>
                                                         <constraint firstItem="6sr-Cf-ZGq" firstAttribute="height" secondItem="ziC-sn-oRb" secondAttribute="height" id="uVh-No-KpI"/>
-                                                        <constraint firstItem="cge-Ob-bx5" firstAttribute="leading" secondItem="ziC-sn-oRb" secondAttribute="trailing" constant="8" id="viK-Mj-kG1"/>
+                                                        <constraint firstItem="cge-Ob-bx5" firstAttribute="leading" secondItem="ziC-sn-oRb" secondAttribute="trailing" constant="5" id="viK-Mj-kG1"/>
                                                         <constraint firstAttribute="height" constant="32" id="w3g-yt-fEu"/>
                                                         <constraint firstItem="ziC-sn-oRb" firstAttribute="leading" secondItem="rrn-4v-rUF" secondAttribute="leading" id="zja-yi-Lop"/>
                                                     </constraints>
                                                 </view>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PfB-ba-l9a" customClass="CBButton" customModule="Hackathon_Googlee" customModuleProvider="target">
+                                                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PfB-ba-l9a" customClass="CBButton" customModule="Hackathon_Googlee" customModuleProvider="target">
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="32" id="Vi1-ct-Wto"/>
                                                         <constraint firstAttribute="width" constant="32" id="e6N-dr-cx2"/>
                                                     </constraints>
                                                     <state key="normal" title="Button" backgroundImage="Define Location-96"/>
                                                 </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="7" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DNg-DK-Q9U">
+                                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="A7X-1a-TVo" firstAttribute="leading" secondItem="U1K-F7-2y0" secondAttribute="leading" constant="8" id="0G4-TF-JsU"/>
@@ -192,12 +197,16 @@
                                                 <constraint firstItem="Vz2-8N-K24" firstAttribute="leading" secondItem="U1K-F7-2y0" secondAttribute="leading" constant="8" id="JgX-a1-o0p"/>
                                                 <constraint firstItem="gxb-Mw-fnC" firstAttribute="top" secondItem="A7X-1a-TVo" secondAttribute="top" id="Jqz-Go-Ys3"/>
                                                 <constraint firstItem="6qG-E6-5Ki" firstAttribute="leading" secondItem="gxb-Mw-fnC" secondAttribute="leading" id="PQe-Cz-lGf"/>
+                                                <constraint firstItem="6qG-E6-5Ki" firstAttribute="trailing" secondItem="gxb-Mw-fnC" secondAttribute="trailing" id="TrC-Wh-EPc"/>
                                                 <constraint firstAttribute="bottom" secondItem="Vz2-8N-K24" secondAttribute="bottom" id="UCa-ac-Oq7"/>
                                                 <constraint firstItem="PfB-ba-l9a" firstAttribute="trailing" secondItem="U1K-F7-2y0" secondAttribute="trailingMargin" id="UQO-18-JX6"/>
                                                 <constraint firstItem="A7X-1a-TVo" firstAttribute="top" secondItem="U1K-F7-2y0" secondAttribute="top" constant="8" id="US5-5Y-MBY"/>
+                                                <constraint firstItem="DNg-DK-Q9U" firstAttribute="trailing" secondItem="6qG-E6-5Ki" secondAttribute="trailing" id="cpb-jm-NTc"/>
                                                 <constraint firstItem="6qG-E6-5Ki" firstAttribute="top" secondItem="gxb-Mw-fnC" secondAttribute="bottom" constant="2" id="nJt-al-UgW"/>
                                                 <constraint firstItem="gxb-Mw-fnC" firstAttribute="leading" secondItem="A7X-1a-TVo" secondAttribute="trailing" constant="8" id="qES-e8-d28"/>
                                                 <constraint firstItem="PfB-ba-l9a" firstAttribute="leading" secondItem="gxb-Mw-fnC" secondAttribute="trailing" constant="8" id="wuL-jv-NYh"/>
+                                                <constraint firstItem="DNg-DK-Q9U" firstAttribute="top" secondItem="6qG-E6-5Ki" secondAttribute="bottom" constant="1" id="yOn-qY-QHJ"/>
+                                                <constraint firstItem="DNg-DK-Q9U" firstAttribute="leading" secondItem="6qG-E6-5Ki" secondAttribute="leading" id="zOi-ak-GEk"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -700,9 +709,10 @@
         <image name="Back-64" width="32" height="32"/>
         <image name="Bar-96" width="48" height="48"/>
         <image name="Christmas Star" width="26" height="26"/>
+        <image name="Christmas StarUn" width="26" height="26"/>
         <image name="Create New-48" width="24" height="24"/>
         <image name="Define Location-96" width="48" height="48"/>
-        <image name="Joining Queue Filled-50" width="25" height="25"/>
+        <image name="Joining Queue-50" width="25" height="25"/>
         <image name="Link-48" width="24" height="24"/>
         <image name="Phone-48" width="24" height="24"/>
         <image name="Settings-48" width="24" height="24"/>
