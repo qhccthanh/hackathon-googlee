@@ -10,6 +10,11 @@
 #define Header_h
 
 #import <GoogleSignIn/GoogleSignIn.h>
+
+#import "SZTextView.h"
+#import <GooglePlacePicker/GooglePlacePicker.h>
+
 #import "YLExtDefines.h"
+
 
 #endif /* Header_h */
