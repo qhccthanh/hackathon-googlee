@@ -120,8 +120,8 @@ class MainViewController: CTViewController {
                             dict.setObject(0, forKey: kJoinedListKey as NSCopying)
                             
                             let newPost = EnticementPost.init(withDictionary: dict)
-                            EnticementPostManager.manager.add(newItem: newPost)
-                            
+//                            EnticementPostManager.manager.add(newItem: newPost)
+                            EnticementPostManager.manager.list.internalArray.insert(newPost, at: 0)
                             
                         }
                     }
