@@ -8,8 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		654D3EAC1DC488E100EC8E03 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654D3EAA1DC488E100EC8E03 /* RequestManager.swift */; };
-		654D3EB01DC4892900EC8E03 /* EnticementPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654D3EAE1DC4892900EC8E03 /* EnticementPost.swift */; };
 		654D3EB11DC4892900EC8E03 /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654D3EAF1DC4892900EC8E03 /* UserAccount.swift */; };
+		654D3EBF1DC4F90500EC8E03 /* EnticementPostManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654D3EBD1DC4F90500EC8E03 /* EnticementPostManager.swift */; };
+		654D3EC01DC4F90500EC8E03 /* TSArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654D3EBE1DC4F90500EC8E03 /* TSArray.swift */; };
+		654D3EC21DC500F700EC8E03 /* EnticementPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654D3EC11DC500F700EC8E03 /* EnticementPost.swift */; };
 		6D5C0DA7A2537AEB3761C6B1 /* Pods_Hackathon_Googlee.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ACE5B95BD1FDE7B7B7E2EA4 /* Pods_Hackathon_Googlee.framework */; };
 		BC2300101DC481E2006AE397 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC23000F1DC481E2006AE397 /* LocationManager.swift */; };
 		BC2300181DC4E525006AE397 /* GoogleMapDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2300171DC4E525006AE397 /* GoogleMapDirector.swift */; };
@@ -139,8 +141,10 @@
 /* Begin PBXFileReference section */
 		654D3EAA1DC488E100EC8E03 /* RequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
 		654D3EAB1DC488E100EC8E03 /* YLExtDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLExtDefines.h; sourceTree = "<group>"; };
-		654D3EAE1DC4892900EC8E03 /* EnticementPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnticementPost.swift; sourceTree = "<group>"; };
 		654D3EAF1DC4892900EC8E03 /* UserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
+		654D3EBD1DC4F90500EC8E03 /* EnticementPostManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnticementPostManager.swift; sourceTree = "<group>"; };
+		654D3EBE1DC4F90500EC8E03 /* TSArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSArray.swift; sourceTree = "<group>"; };
+		654D3EC11DC500F700EC8E03 /* EnticementPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnticementPost.swift; sourceTree = "<group>"; };
 		8ACE5B95BD1FDE7B7B7E2EA4 /* Pods_Hackathon_Googlee.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hackathon_Googlee.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC23000F1DC481E2006AE397 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		BC2300171DC4E525006AE397 /* GoogleMapDirector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleMapDirector.swift; sourceTree = "<group>"; };
@@ -306,6 +310,7 @@
 		654D3EA91DC488BA00EC8E03 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				654D3EBD1DC4F90500EC8E03 /* EnticementPostManager.swift */,
 				654D3EAA1DC488E100EC8E03 /* RequestManager.swift */,
 				654D3EAB1DC488E100EC8E03 /* YLExtDefines.h */,
 			);
@@ -568,12 +573,13 @@
 		F4DA8CDD1DC44CA600350FE5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				654D3EAE1DC4892900EC8E03 /* EnticementPost.swift */,
+				654D3EBE1DC4F90500EC8E03 /* TSArray.swift */,
 				654D3EAF1DC4892900EC8E03 /* UserAccount.swift */,
 				BC23000F1DC481E2006AE397 /* LocationManager.swift */,
 				F4DA8D091DC4C55D00350FE5 /* CTMarker.swift */,
 				F4DA8D0B1DC4CBFE00350FE5 /* MarkerManager.swift */,
 				BC2300171DC4E525006AE397 /* GoogleMapDirector.swift */,
+				654D3EC11DC500F700EC8E03 /* EnticementPost.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -825,11 +831,11 @@
 				F43EAB231DC4401B00E3AFFB /* UIDevice+Extension.swift in Sources */,
 				F4DA8D0C1DC4CBFE00350FE5 /* MarkerManager.swift in Sources */,
 				654D3EAC1DC488E100EC8E03 /* RequestManager.swift in Sources */,
-				654D3EB01DC4892900EC8E03 /* EnticementPost.swift in Sources */,
 				BCD24DE01DC448A100EBB86F /* CTViewController.swift in Sources */,
 				BCD24DDC1DC441CC00EBB86F /* StatusDetailViewController.swift in Sources */,
 				F4DA8CF31DC485A300350FE5 /* GrowingTextView.swift in Sources */,
 				F43EAA351DC43EF500E3AFFB /* AppDelegate.swift in Sources */,
+				654D3EC21DC500F700EC8E03 /* EnticementPost.swift in Sources */,
 				654D3EB11DC4892900EC8E03 /* UserAccount.swift in Sources */,
 				F43EAB261DC4401B00E3AFFB /* VersionSupport.swift in Sources */,
 				F43EAB1F1DC4401B00E3AFFB /* STPopupNavigationBar.m in Sources */,
@@ -838,7 +844,9 @@
 				F43EAB1A1DC4401B00E3AFFB /* MBProgressHUD.m in Sources */,
 				F43EAB221DC4401B00E3AFFB /* String+Extension.swift in Sources */,
 				BC2300181DC4E525006AE397 /* GoogleMapDirector.swift in Sources */,
+				654D3EC01DC4F90500EC8E03 /* TSArray.swift in Sources */,
 				F43EAB1C1DC4401B00E3AFFB /* SoundManager.swift in Sources */,
+				654D3EBF1DC4F90500EC8E03 /* EnticementPostManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

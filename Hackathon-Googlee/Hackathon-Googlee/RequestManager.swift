@@ -40,18 +40,21 @@ class RequestManager: NSObject {
                     userRef?.observeSingleEvent(of: .value, with: { (snapshot) in
                         var data: NSDictionary = NSDictionary()
                         
+                        data = [
+                            kUserIDKey:        user!.uid,
+                            kUserNameKey:      profile.displayName!,
+                            kAvatarURLKey:     (profile.photoURL != nil) ? profile.photoURL!.absoluteString : "",
+                            kEmailKey:         profile.email!,
+                            kPhoneNumberKey: "",
+                            kSexKey: "Male",
+                            kBirthDayKey: 0
+                        ]
+                        
                         if (!snapshot.exists()) {
-                            data = [
-                                kUserIDKey:        user!.uid,
-                                kUserNameKey:      profile.displayName!,
-                                kAvatarURLKey:     (profile.photoURL != nil) ? profile.photoURL!.absoluteString : "",
-                                kEmailKey:         profile.email!,
-                                kPhoneNumberKey: "",
-                                kSexKey: "Male",
-                                kBirthDayKey: 0
-                            ]
+
                             self.insert(child: (user?.uid)!, withData: data, toPath: kUsersKey)
                         }
+                        UserAccount.sharedInstance = UserAccount(withDictionary: data)
                         NotificationCenter.default.post(name: .UserLoggedIn, object: nil, userInfo: data as? [AnyHashable : Any])
                     })
                 }

@@ -10,14 +10,13 @@ import UIKit
 
 enum Category : Int {
     
-    case GapMat = 0
-    case ChoiGame
+    case ChoiGame = 0
+    case DiAn
     case DiDuLich
-    case ThamGiaSuKien
+    case CungNhauGapMat
     case ChuyenDo
     case TanGau
-    case DiAn
-    
+    case CungNhauDiSuKien
 }
 
 protocol EnticementPostProtocol: class {
@@ -30,6 +29,7 @@ protocol EnticementPostProtocol: class {
     func getJoinedList() -> Array<UserAccount>?
 }
 
+let kNumberOfPerson = "numberOfPerson"
 let kHostKey = "hostID"
 let kPostTimeKey = "postTime"
 let kContentKey = "content"
@@ -39,10 +39,14 @@ let kHostLongLocationKey = "hostLongLocation"
 let kInterestedListKey = "interestedList"
 let kJoinedListKey = "joinedList"
 
+
+
+
 class EnticementPost: NSObject, EnticementPostProtocol {
-    
+
     // Properties
     var host: UserAccount?
+    var numberOfPerson: Int?
     var postTime: Double? // Time interval since 1970
     var content: String?
     var categories: Array<Category>! = Array()
@@ -55,13 +59,36 @@ class EnticementPost: NSObject, EnticementPostProtocol {
         super.init()
     }
     
+    class func categoryNameToNumber(name: String) -> Category {
+        switch name {
+        case "Chơi game":
+            return .ChoiGame
+        case "Đi ăn":
+            return .DiAn
+        case "Đi du lịch":
+            return .DiDuLich
+        case "Cùng nhau gặp mặt":
+            return .CungNhauGapMat
+        case "Chuyển đồ":
+            return .ChuyenDo
+        case"Tán gẫu":
+            return .TanGau
+        default:
+            return .CungNhauDiSuKien
+        }
+    }
+    
     init(withDictionary data: NSDictionary) {
         super.init()
         
+        self.numberOfPerson = data.object(forKey: kNumberOfPerson) as? Int
         self.host = data.object(forKey: kHostKey) as? UserAccount
         self.postTime = data.object(forKey: kPostTimeKey) as? Double
         self.content = data.object(forKey: kContentKey) as? String
-        self.categories = (data.object(forKey: kCategoriesKey) as? NSDictionary)?.allValues as? Array<Category>
+        
+        print((data.object(forKey: kCategoriesKey) as? NSDictionary)?.allValues)
+        
+        self.categories = (data.object(forKey: kCategoriesKey) as? NSDictionary)?.allValues as? [Category]
         self.hostLatLocation = data.object(forKey: kHostLatLocationKey) as? Double
         self.hostLongLocation = data.object(forKey: kHostLongLocationKey) as? Double
         
@@ -79,6 +106,8 @@ class EnticementPost: NSObject, EnticementPostProtocol {
     }
     
     func updateData(withDictionary data: NSDictionary) {
+        
+        self.numberOfPerson = data.object(forKey: kNumberOfPerson) as? Int
         self.host = data.object(forKey: kHostKey) as? UserAccount
         self.postTime = data.object(forKey: kPostTimeKey) as? Double
         self.content = data.object(forKey: kContentKey) as? String
@@ -99,6 +128,56 @@ class EnticementPost: NSObject, EnticementPostProtocol {
         }
     }
     
+    func getCategories() -> Array<Category>? {
+        return categories
+    }
+    
+    func pushData2Server() {
+        //push host
+        let child = RequestManager.sharedInstance.getAutoID(withPath: kEnticementPosts)
+        let postDict = self.convert2Dictionary()
+        
+        RequestManager.sharedInstance.insert(child: child!, withData: postDict, toPath: kEnticementPosts)
+        
+    }
+    
+    func convert2Dictionary() -> NSDictionary{
+        
+        let postDict: NSMutableDictionary = NSMutableDictionary()
+        
+        let hostDict = self.host?.convert2Dictionary()
+        
+        var interestDictArr = Array<NSMutableDictionary>()
+        var joinDictArr = Array<NSMutableDictionary>()
+        var cateloriesArr = Array<Int>()
+        
+        
+        for interest in self.interestedList {
+            interestDictArr.append(interest.convert2Dictionary())
+        }
+        
+        for joiner in self.joinedList {
+            joinDictArr.append(joiner.convert2Dictionary())
+        }
+        
+        for category in self.categories {
+            let cateID = category.rawValue
+            cateloriesArr.append(cateID)
+        }
+        
+        postDict.setValue(self.postTime, forKey: kPostTimeKey)
+        postDict.setValue(self.content, forKey: kContentKey)
+        postDict.setValue(cateloriesArr, forKey: kCategoriesKey)
+        postDict.setValue(self.hostLatLocation, forKey: kHostLatLocationKey)
+        postDict.setValue(self.hostLongLocation, forKey: kHostLongLocationKey)
+        postDict.setValue(interestDictArr, forKey: kInterestedListKey)
+        postDict.setValue(joinDictArr, forKey: kJoinedListKey)
+        
+        postDict.setValue(hostDict, forKey: "hostUser")
+        
+        return postDict
+    }
+    
     func getHost() -> UserAccount? {
         return host
     }
@@ -108,9 +187,11 @@ class EnticementPost: NSObject, EnticementPostProtocol {
     func getContent() -> String? {
         return content
     }
-    func getCategories() -> Array<Category>? {
-        return categories
-    }
+    
+    //    func getCategories() -> Array<Category>? {
+    //        return categories
+    //    }
+    
     func getJoinedList() -> Array<UserAccount>? {
         return joinedList
     }
@@ -118,9 +199,9 @@ class EnticementPost: NSObject, EnticementPostProtocol {
         return interestedList
     }
     func getHostLocation(completion: ((String?) -> Void)?) {
-       
+        
         let webServiceURL = URL.init(string: "http://maps.googleapis.com/maps/api/geocode/json?latlng=" + "\(hostLatLocation)" + "," + "\(hostLongLocation)")
-
+        
         if (self.hostLongLocation == nil || self.hostLongLocation == nil || webServiceURL == nil) {
             completion?(nil)
         }

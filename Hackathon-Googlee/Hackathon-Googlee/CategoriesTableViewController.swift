@@ -15,9 +15,9 @@ class CategoriesTableViewController: CTViewController {
         (rawValue: Category.ChuyenDo,Title: "Chuyển đồ",image: UIImage(named: "Move by Trolley-104")),
         (rawValue: Category.DiAn,Title: "Đi ăn",image: UIImage(named: "Restaurant-96")),
         (rawValue: Category.DiDuLich,Title: "Đi du lịch",image: UIImage(named: "Left Footprint-96")),
-        (rawValue: Category.GapMat,Title: "Cùng nhau gặp mặt",image: UIImage(named: "Collaboration-100")),
+        (rawValue: Category.CungNhauGapMat,Title: "Cùng nhau gặp mặt",image: UIImage(named: "Collaboration-100")),
         (rawValue: Category.TanGau,Title: "Tán gẫu",image: UIImage(named: "Chat Filled-100")),
-        (rawValue: Category.ThamGiaSuKien,Title: "Cùng tham gia sự kiện",image: UIImage(named: "Champagne-96")),
+        (rawValue: Category.CungNhauDiSuKien,Title: "Cùng tham gia sự kiện",image: UIImage(named: "Champagne-96")),
     ]
     
     @IBOutlet weak var categoriesTableView: UITableView!

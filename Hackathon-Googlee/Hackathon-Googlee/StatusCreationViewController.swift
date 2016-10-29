@@ -39,7 +39,7 @@ class StatusCreationViewController: CTViewController {
         self.locationButton.contentEdgeInsets = UIEdgeInsetsMake(categoriesButton.contentEdgeInsets.top, 8, categoriesButton.contentEdgeInsets.bottom, 8)
         self.imageButton.contentEdgeInsets = UIEdgeInsetsMake(categoriesButton.contentEdgeInsets.top, 8, categoriesButton.contentEdgeInsets.bottom, 8)
         
-        
+        textView.text = "Mô tả ..."
     }
     
     override func didReceiveMemoryWarning() {
@@ -50,12 +50,44 @@ class StatusCreationViewController: CTViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        textView.text = "Mô tả ..."
     }
     
     @IBAction func addStatusAction(_ sender: AnyObject!) {
-        
+        if (LocationManager.locationManager.location != nil) {
+            let dict = NSMutableDictionary()
+            
+            dict.setObject(textView.text, forKey: kContentKey as NSCopying)
+            dict.setObject(Int.init(numberPerson.text!)!, forKey: kNumberOfPerson as NSCopying)
+            dict.setObject(UserAccount.sharedInstance, forKey: kHostKey as NSCopying)
+            dict.setObject(Date.timeIntervalSinceReferenceDate, forKey: kPostTimeKey as NSCopying)
+            
+            var categories = self.categoriesButton.currentTitle
+            categories?.characters.removeFirst()
+            
+            let dict1 = NSMutableDictionary()
+            
+            var index = 0
+            for string in (categories?.components(separatedBy: ", "))! {
+                dict1.setValue(EnticementPost.categoryNameToNumber(name: string), forKey: "\(index)")
+                
+                print(string)
+                print(index)
+                index = index + 1
+            }
+            
+            dict.setObject(dict1, forKey: kCategoriesKey as NSCopying)
+            
+            dict.setObject(LocationManager.locationManager.location.coordinate.latitude, forKey: kHostLatLocationKey as NSCopying)
+            dict.setObject(LocationManager.locationManager.location.coordinate.longitude, forKey: kHostLongLocationKey as NSCopying)
+            
+            let newPost = EnticementPost.init(withDictionary: dict)
+            EnticementPostManager.manager.add(newItem: newPost)
+            
+            print(newPost)
+            newPost.pushData2Server()
+        }
     }
+
     
     @IBAction func pickCategoriesAction(_ sender: AnyObject!) {
         

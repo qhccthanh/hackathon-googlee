@@ -30,7 +30,7 @@ protocol UserAccountProtocol : class {
 
 class UserAccount: NSObject , UserAccountProtocol {
    
-    static let sharedInstance = UserAccount()
+    static var sharedInstance = UserAccount()
     
     // Properies
     var userID: String?
@@ -63,6 +63,25 @@ class UserAccount: NSObject , UserAccountProtocol {
         self.phoneNumber = data.object(forKey: kPhoneNumberKey) as? String
         self.sex = data.object(forKey: kSexKey) as? String
         self.birthDay = data.object(forKey: kBirthDayKey) as? Int
+    }
+    
+    func pushData2Server(child: String, data: Any, path: String) {
+        RequestManager.sharedInstance.insert(child: child, withData: data, toPath: path)
+    }
+    
+    func convert2Dictionary() -> NSMutableDictionary{
+        let resDict: NSMutableDictionary = NSMutableDictionary()
+        
+        resDict.setValue(self.userID, forKey: kUserIDKey)
+        resDict.setValue(self.userName, forKey: kUserNameKey)
+        resDict.setValue(self.avatarURL, forKey: kAvatarURLKey)
+        resDict.setValue(self.email, forKey: kEmailKey)
+        resDict.setValue(self.phoneNumber, forKey: kPhoneNumberKey)
+        resDict.setValue(self.sex, forKey: kSexKey)
+        resDict.setValue(self.birthDay, forKey: kBirthDayKey)
+        
+        
+        return resDict
     }
     
     func getUserID() -> String? {

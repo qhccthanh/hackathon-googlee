@@ -20,7 +20,9 @@ class MainViewController: CTViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        
+        _ = RequestManager.sharedInstance.observeData(fromPath: kEnticementPosts, withEvent: .value) { (data) in
+            print(data)
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
