@@ -6,7 +6,6 @@
 //  Copyright © 2016 Quach Ha Chan Thanh. All rights reserved.
 //
 
-import GoogleSignIn
 import Google
 import Foundation
 import UIKit
@@ -14,12 +13,25 @@ import UIKit
 
 class LoginViewController: CTViewController, GIDSignInUIDelegate {
     
-    @IBOutlet weak var logoImage: UIImage?
+    @IBOutlet weak var logoImage: UIImageView?
+    var googleLoginButton: GIDSignInButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         GIDSignIn.sharedInstance().uiDelegate = self
+        
+        self.googleLoginButton = GIDSignInButton(frame: CGRect.zero)
+        self.googleLoginButton.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(self.googleLoginButton)
+        
+        let topLayout = NSLayoutConstraint(item: self.googleLoginButton, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: self.logoImage, attribute: NSLayoutAttribute.bottom, multiplier: 1, constant: 16)
+        
+        let centerX = NSLayoutConstraint(item: self.googleLoginButton, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.centerX, multiplier: 1, constant: 0)
+        
+        self.view.addConstraint(topLayout)
+        self.view.addConstraint(centerX)
+        
         
     }
     
