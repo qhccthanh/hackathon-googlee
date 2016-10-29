@@ -26,6 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         GMSServices .provideAPIKey("AIzaSyCpZPxa9jDjyGUt7XXf4Q8xXkz9Mfg2ZtI")
+        GMSPlacesClient.provideAPIKey("AIzaSyCG7kHZYcxW5O3tjk-CNbsafSkeh8LEfL0")
+        
         GIDSignIn.sharedInstance().clientID = FIRApp.defaultApp()?.options.clientID
         var configureError: NSError?
         GGLContext.sharedInstance().configureWithError(&configureError)

@@ -17,7 +17,7 @@
 		654D3E921DC441BF00EC8E03 /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654D3E911DC441BF00EC8E03 /* UserAccount.swift */; };
 		654D3E941DC4440000EC8E03 /* EnticementPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654D3E931DC4440000EC8E03 /* EnticementPost.swift */; };
 		654D3E981DC44C8900EC8E03 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 654D3E971DC44C8900EC8E03 /* GoogleService-Info.plist */; };
-		654D3E9C1DC4535D00EC8E03 /* YLRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 654D3E9B1DC4535D00EC8E03 /* YLRequestManager.m */; };
+		654D3E9F1DC4693100EC8E03 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654D3E9E1DC4693100EC8E03 /* RequestManager.swift */; };
 		CC454C4C3C619140FC06888E /* Pods_CodeLogicGaming.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5863319831C40AB7341F9FDC /* Pods_CodeLogicGaming.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,8 +57,8 @@
 		654D3E931DC4440000EC8E03 /* EnticementPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnticementPost.swift; sourceTree = "<group>"; };
 		654D3E971DC44C8900EC8E03 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		654D3E991DC4535C00EC8E03 /* CodeLogicGaming-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CodeLogicGaming-Bridging-Header.h"; sourceTree = "<group>"; };
-		654D3E9A1DC4535D00EC8E03 /* YLRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLRequestManager.h; sourceTree = "<group>"; };
-		654D3E9B1DC4535D00EC8E03 /* YLRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLRequestManager.m; sourceTree = "<group>"; };
+		654D3E9D1DC4626700EC8E03 /* YLExtDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLExtDefines.h; sourceTree = "<group>"; };
+		654D3E9E1DC4693100EC8E03 /* RequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
 		A4DC001D686492C05D8365F4 /* Pods-CodeLogicGaming.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodeLogicGaming.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CodeLogicGaming/Pods-CodeLogicGaming.debug.xcconfig"; sourceTree = "<group>"; };
 		EA36DCD86D3F2DD9D6B92CF5 /* Pods-CodeLogicGaming.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodeLogicGaming.release.xcconfig"; path = "Pods/Target Support Files/Pods-CodeLogicGaming/Pods-CodeLogicGaming.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -139,8 +139,8 @@
 				6505BC8A1DC43F4C00F00E8F /* Info.plist */,
 				654D3E911DC441BF00EC8E03 /* UserAccount.swift */,
 				654D3E931DC4440000EC8E03 /* EnticementPost.swift */,
-				654D3E9A1DC4535D00EC8E03 /* YLRequestManager.h */,
-				654D3E9B1DC4535D00EC8E03 /* YLRequestManager.m */,
+				654D3E9E1DC4693100EC8E03 /* RequestManager.swift */,
+				654D3E9D1DC4626700EC8E03 /* YLExtDefines.h */,
 				654D3E991DC4535C00EC8E03 /* CodeLogicGaming-Bridging-Header.h */,
 				654D3E971DC44C8900EC8E03 /* GoogleService-Info.plist */,
 			);
@@ -356,8 +356,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				654D3E941DC4440000EC8E03 /* EnticementPost.swift in Sources */,
-				654D3E9C1DC4535D00EC8E03 /* YLRequestManager.m in Sources */,
 				6505BC811DC43F4C00F00E8F /* ViewController.swift in Sources */,
+				654D3E9F1DC4693100EC8E03 /* RequestManager.swift in Sources */,
 				6505BC7F1DC43F4C00F00E8F /* AppDelegate.swift in Sources */,
 				654D3E921DC441BF00EC8E03 /* UserAccount.swift in Sources */,
 			);

@@ -14,4 +14,5 @@ target 'Hackathon-Googlee' do
 	pod 'Firebase/Storage'
     pod 'Firebase/Messaging'
     pod 'Google/SignIn'
+    pod 'GooglePlacePicker'
 end
