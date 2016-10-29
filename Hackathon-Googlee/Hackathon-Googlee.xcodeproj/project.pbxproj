@@ -133,6 +133,7 @@
 		F4DA8D0A1DC4C55D00350FE5 /* CTMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DA8D091DC4C55D00350FE5 /* CTMarker.swift */; };
 		F4DA8D0C1DC4CBFE00350FE5 /* MarkerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DA8D0B1DC4CBFE00350FE5 /* MarkerManager.swift */; };
 		F4DA8D0E1DC4D83B00350FE5 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DA8D0D1DC4D83B00350FE5 /* UserProfileViewController.swift */; };
+		F4DA8D101DC4ED5F00350FE5 /* gground.png in Resources */ = {isa = PBXBuildFile; fileRef = F4DA8D0F1DC4ED5F00350FE5 /* gground.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -278,6 +279,7 @@
 		F4DA8D091DC4C55D00350FE5 /* CTMarker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CTMarker.swift; sourceTree = "<group>"; };
 		F4DA8D0B1DC4CBFE00350FE5 /* MarkerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkerManager.swift; sourceTree = "<group>"; };
 		F4DA8D0D1DC4D83B00350FE5 /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
+		F4DA8D0F1DC4ED5F00350FE5 /* gground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gground.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -556,6 +558,7 @@
 		F4DA8CDC1DC44CA100350FE5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F4DA8D0F1DC4ED5F00350FE5 /* gground.png */,
 				F43EAA381DC43EF500E3AFFB /* Main.storyboard */,
 				F43EAA3D1DC43EF500E3AFFB /* LaunchScreen.storyboard */,
 			);
@@ -569,11 +572,8 @@
 				654D3EAF1DC4892900EC8E03 /* UserAccount.swift */,
 				BC23000F1DC481E2006AE397 /* LocationManager.swift */,
 				F4DA8D091DC4C55D00350FE5 /* CTMarker.swift */,
-
 				F4DA8D0B1DC4CBFE00350FE5 /* MarkerManager.swift */,
-
 				BC2300171DC4E525006AE397 /* GoogleMapDirector.swift */,
-
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -737,6 +737,7 @@
 				F43EAAFD1DC4401B00E3AFFB /* StartBF-96.png in Resources */,
 				F43EAA3C1DC43EF500E3AFFB /* Assets.xcassets in Resources */,
 				F43EAB0B1DC4401B00E3AFFB /* tank_red.png in Resources */,
+				F4DA8D101DC4ED5F00350FE5 /* gground.png in Resources */,
 				F43EAAE51DC4401B00E3AFFB /* Rating-96.png in Resources */,
 				F43EAB031DC4401B00E3AFFB /* fire.png in Resources */,
 				F43EAACF1DC4401B00E3AFFB /* Google Translate-96.png in Resources */,

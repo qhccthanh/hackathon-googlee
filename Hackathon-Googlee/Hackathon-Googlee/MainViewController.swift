@@ -29,11 +29,11 @@ class MainViewController: CTViewController {
         mapView.isMyLocationEnabled = true
         if let location = LocationManager.locationManager.location {
             let target = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-            mapView.camera = GMSCameraPosition.camera(withTarget: target, zoom: 15)
+            mapView.camera = GMSCameraPosition.camera(withTarget: target, zoom: 16)
         } else {
             print("User's location is unknown")
             let target = CLLocationCoordinate2D(latitude: 10.7639531, longitude: 106.6565973)
-            mapView.camera = GMSCameraPosition.camera(withTarget: target, zoom: 10)
+            mapView.camera = GMSCameraPosition.camera(withTarget: target, zoom: 16)
             
             let position = CLLocationCoordinate2DMake(10.7639531, 106.6565973)
             let marker = GMSMarker(position: position)
