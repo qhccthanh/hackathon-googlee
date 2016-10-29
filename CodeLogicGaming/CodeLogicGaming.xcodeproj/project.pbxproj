@@ -14,6 +14,7 @@
 		6505BC891DC43F4C00F00E8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6505BC871DC43F4C00F00E8F /* LaunchScreen.storyboard */; };
 		6505BC941DC43F4C00F00E8F /* CodeLogicGamingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6505BC931DC43F4C00F00E8F /* CodeLogicGamingTests.swift */; };
 		6505BC9F1DC43F4C00F00E8F /* CodeLogicGamingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6505BC9E1DC43F4C00F00E8F /* CodeLogicGamingUITests.swift */; };
+		CC454C4C3C619140FC06888E /* Pods_CodeLogicGaming.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5863319831C40AB7341F9FDC /* Pods_CodeLogicGaming.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5863319831C40AB7341F9FDC /* Pods_CodeLogicGaming.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CodeLogicGaming.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6505BC7B1DC43F4C00F00E8F /* CodeLogicGaming.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeLogicGaming.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6505BC7E1DC43F4C00F00E8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6505BC801DC43F4C00F00E8F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +49,8 @@
 		6505BC9A1DC43F4C00F00E8F /* CodeLogicGamingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodeLogicGamingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6505BC9E1DC43F4C00F00E8F /* CodeLogicGamingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeLogicGamingUITests.swift; sourceTree = "<group>"; };
 		6505BCA01DC43F4C00F00E8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A4DC001D686492C05D8365F4 /* Pods-CodeLogicGaming.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodeLogicGaming.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CodeLogicGaming/Pods-CodeLogicGaming.debug.xcconfig"; sourceTree = "<group>"; };
+		EA36DCD86D3F2DD9D6B92CF5 /* Pods-CodeLogicGaming.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodeLogicGaming.release.xcconfig"; path = "Pods/Target Support Files/Pods-CodeLogicGaming/Pods-CodeLogicGaming.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC454C4C3C619140FC06888E /* Pods_CodeLogicGaming.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +79,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2515A5ECD2907EA1DBC3635E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5863319831C40AB7341F9FDC /* Pods_CodeLogicGaming.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		48FC14D5D27D62F8D2103B6A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A4DC001D686492C05D8365F4 /* Pods-CodeLogicGaming.debug.xcconfig */,
+				EA36DCD86D3F2DD9D6B92CF5 /* Pods-CodeLogicGaming.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		6505BC721DC43F4C00F00E8F = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +103,8 @@
 				6505BC921DC43F4C00F00E8F /* CodeLogicGamingTests */,
 				6505BC9D1DC43F4C00F00E8F /* CodeLogicGamingUITests */,
 				6505BC7C1DC43F4C00F00E8F /* Products */,
+				48FC14D5D27D62F8D2103B6A /* Pods */,
+				2515A5ECD2907EA1DBC3635E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -132,9 +156,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6505BCA31DC43F4C00F00E8F /* Build configuration list for PBXNativeTarget "CodeLogicGaming" */;
 			buildPhases = (
+				9F96AFE833FFFBCABE07DA04 /* [CP] Check Pods Manifest.lock */,
 				6505BC771DC43F4C00F00E8F /* Sources */,
 				6505BC781DC43F4C00F00E8F /* Frameworks */,
 				6505BC791DC43F4C00F00E8F /* Resources */,
+				15A75EA793976CE15ED26355 /* [CP] Embed Pods Frameworks */,
+				1E8B19FB68F65DD352332E46 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -256,6 +283,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		15A75EA793976CE15ED26355 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CodeLogicGaming/Pods-CodeLogicGaming-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1E8B19FB68F65DD352332E46 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CodeLogicGaming/Pods-CodeLogicGaming-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9F96AFE833FFFBCABE07DA04 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run \'pod install\' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6505BC771DC43F4C00F00E8F /* Sources */ = {
@@ -411,6 +486,7 @@
 		};
 		6505BCA41DC43F4C00F00E8F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A4DC001D686492C05D8365F4 /* Pods-CodeLogicGaming.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 8UL2HC5M7B;
@@ -424,6 +500,7 @@
 		};
 		6505BCA51DC43F4C00F00E8F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA36DCD86D3F2DD9D6B92CF5 /* Pods-CodeLogicGaming.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 8UL2HC5M7B;
