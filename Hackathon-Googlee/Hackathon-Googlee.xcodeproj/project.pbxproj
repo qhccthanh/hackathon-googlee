@@ -136,6 +136,7 @@
 		F4DA8D0C1DC4CBFE00350FE5 /* MarkerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DA8D0B1DC4CBFE00350FE5 /* MarkerManager.swift */; };
 		F4DA8D0E1DC4D83B00350FE5 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DA8D0D1DC4D83B00350FE5 /* UserProfileViewController.swift */; };
 		F4DA8D101DC4ED5F00350FE5 /* gground.png in Resources */ = {isa = PBXBuildFile; fileRef = F4DA8D0F1DC4ED5F00350FE5 /* gground.png */; };
+		F4FF9CE51DC538B800A7D455 /* Define Location-48.png in Resources */ = {isa = PBXBuildFile; fileRef = F4FF9CE41DC538B800A7D455 /* Define Location-48.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -284,6 +285,7 @@
 		F4DA8D0B1DC4CBFE00350FE5 /* MarkerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkerManager.swift; sourceTree = "<group>"; };
 		F4DA8D0D1DC4D83B00350FE5 /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		F4DA8D0F1DC4ED5F00350FE5 /* gground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gground.png; sourceTree = "<group>"; };
+		F4FF9CE41DC538B800A7D455 /* Define Location-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Define Location-48.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -563,6 +565,7 @@
 		F4DA8CDC1DC44CA100350FE5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F4FF9CE41DC538B800A7D455 /* Define Location-48.png */,
 				F4DA8D0F1DC4ED5F00350FE5 /* gground.png */,
 				F43EAA381DC43EF500E3AFFB /* Main.storyboard */,
 				F43EAA3D1DC43EF500E3AFFB /* LaunchScreen.storyboard */,
@@ -723,6 +726,7 @@
 				F43EAAE11DC4401B00E3AFFB /* Rating-48 (1).png in Resources */,
 				F43EAADE1DC4401B00E3AFFB /* Pause Filled-50.png in Resources */,
 				F43EAAC21DC4401B00E3AFFB /* Book.png in Resources */,
+				F4FF9CE51DC538B800A7D455 /* Define Location-48.png in Resources */,
 				F43EAAC51DC4401B00E3AFFB /* chatbox.png.crdownload in Resources */,
 				F43EAAEC1DC4401B00E3AFFB /* Shopping-96.png in Resources */,
 				F43EAADB1DC4401B00E3AFFB /* Menu-96.png.crdownload in Resources */,

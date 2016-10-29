@@ -90,6 +90,13 @@ class MainViewController: CTViewController {
         
     }
     
+    @IBAction func moveToMyLocation(_ sender: AnyObject!) {
+        LocationManager.locationManager.getCurrentLocation { (locaton) in
+            
+            self.mapView.animate(to: GMSCameraPosition(target: CLLocationCoordinate2D(latitude: locaton.coordinate.latitude,longitude: locaton.coordinate.longitude), zoom: 16, bearing: 0, viewingAngle: 0))
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
