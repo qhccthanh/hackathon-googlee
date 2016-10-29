@@ -129,6 +129,7 @@
 		F4DA8CE41DC4817500350FE5 /* SZTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = F4DA8CE31DC4817500350FE5 /* SZTextView.m */; };
 		F4DA8CF31DC485A300350FE5 /* GrowingTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DA8CF21DC485A300350FE5 /* GrowingTextView.swift */; };
 		F4DA8CF71DC493E900350FE5 /* CategoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DA8CF61DC493E900350FE5 /* CategoriesTableViewController.swift */; };
+		F4DA8D0A1DC4C55D00350FE5 /* CTMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DA8D091DC4C55D00350FE5 /* CTMarker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -270,6 +271,7 @@
 		F4DA8CE31DC4817500350FE5 /* SZTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZTextView.m; sourceTree = "<group>"; };
 		F4DA8CF21DC485A300350FE5 /* GrowingTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrowingTextView.swift; sourceTree = "<group>"; };
 		F4DA8CF61DC493E900350FE5 /* CategoriesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesTableViewController.swift; sourceTree = "<group>"; };
+		F4DA8D091DC4C55D00350FE5 /* CTMarker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CTMarker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -559,6 +561,7 @@
 				654D3EAE1DC4892900EC8E03 /* EnticementPost.swift */,
 				654D3EAF1DC4892900EC8E03 /* UserAccount.swift */,
 				BC23000F1DC481E2006AE397 /* LocationManager.swift */,
+				F4DA8D091DC4C55D00350FE5 /* CTMarker.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -803,6 +806,7 @@
 				BCD24DDE1DC441FF00EBB86F /* StatusCreationViewController.swift in Sources */,
 				F43EAB241DC4401B00E3AFFB /* UIView+Extension.swift in Sources */,
 				F43EAB1B1DC4401B00E3AFFB /* MenuItem.swift in Sources */,
+				F4DA8D0A1DC4C55D00350FE5 /* CTMarker.swift in Sources */,
 				F43EAB211DC4401B00E3AFFB /* UIViewController+STPopup.m in Sources */,
 				F43EAB231DC4401B00E3AFFB /* UIDevice+Extension.swift in Sources */,
 				654D3EAC1DC488E100EC8E03 /* RequestManager.swift in Sources */,
