@@ -110,11 +110,15 @@ class EnticementPost: NSObject, EnticementPostProtocol {
         
         print((data.object(forKey: kCategoriesKey) as? NSDictionary)?.allValues)
         
-        var temp =  data.object(forKey: kCategoriesKey) as! NSArray
-        for t in temp {
-            if let t = t as? Hackathon_Googlee.Category {
-               self.categories.append(t)
+        if let temp =  data.object(forKey: kCategoriesKey) as? NSArray {
+    
+            for t in temp {
+                if let t = t as? Hackathon_Googlee.Category {
+                   self.categories.append(t)
+                }
             }
+        } else if let temp = data[kCategoriesKey] as? NSDictionary {
+            self.categories = temp.allValues as! [Hackathon_Googlee.Category]
         }
         
        // self.categories =

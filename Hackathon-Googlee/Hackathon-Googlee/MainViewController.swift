@@ -167,9 +167,9 @@ class MainViewController: CTViewController {
     }
     
     @IBAction func moveToMyLocation(_ sender: AnyObject!) {
-        LocationManager.locationManager.getCurrentLocation { (locaton) in
+        if let location = LocationManager.locationManager.location {
             
-            self.mapView.animate(to: GMSCameraPosition(target: CLLocationCoordinate2D(latitude: locaton.coordinate.latitude,longitude: locaton.coordinate.longitude), zoom: 16, bearing: 0, viewingAngle: 0))
+            self.mapView.animate(to: GMSCameraPosition(target: CLLocationCoordinate2D(latitude: location.coordinate.latitude,longitude: location.coordinate.longitude), zoom: 16, bearing: 0, viewingAngle: 0))
         }
     }
     
