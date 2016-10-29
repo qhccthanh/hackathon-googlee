@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "15F6B27264E2176074712B5D5022B0479F561DC3",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "07E3C3FF7D1A114FF69A8275DAE745EF7B103C15" : 9223372036854775807,
+    "15F6B27264E2176074712B5D5022B0479F561DC3" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "20C3FD8D-7A3A-4EDB-A92D-AD48D2A328F0",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "07E3C3FF7D1A114FF69A8275DAE745EF7B103C15" : "",
+    "15F6B27264E2176074712B5D5022B0479F561DC3" : "Hackathon\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "CodeLogicGaming",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "CodeLogicGaming\/CodeLogicGaming.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/bitbucket.org\/qhcthanh\/gametala.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "07E3C3FF7D1A114FF69A8275DAE745EF7B103C15"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/qhccthanh\/hackathon-googlee",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "15F6B27264E2176074712B5D5022B0479F561DC3"
+    }
+  ]
+}
