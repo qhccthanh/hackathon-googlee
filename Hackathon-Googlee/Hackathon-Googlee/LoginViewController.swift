@@ -12,7 +12,7 @@ import UIKit
 import Firebase
 
 
-class LoginViewController: CTViewController, GIDSignInUIDelegate, GIDSignInDelegate {
+class LoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate {
     
     @IBOutlet weak var logoImage: UIImageView?
     var googleLoginButton: UIButton!
@@ -24,6 +24,7 @@ class LoginViewController: CTViewController, GIDSignInUIDelegate, GIDSignInDeleg
         GIDSignIn.sharedInstance().delegate = self
         
         self.googleLoginButton = UIButton(frame: CGRect.zero)
+        self.googleLoginButton.setImage(UIImage(named: "btn_google_signin_light_pressed_web"), for: UIControlState.normal)
         self.googleLoginButton.translatesAutoresizingMaskIntoConstraints = false
         self.googleLoginButton.addTarget(self, action: #selector(signInGoogle), for: UIControlEvents.touchUpInside)
         
