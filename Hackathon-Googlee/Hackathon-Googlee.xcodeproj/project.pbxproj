@@ -1,0 +1,387 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6D5C0DA7A2537AEB3761C6B1 /* Pods_Hackathon_Googlee.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ACE5B95BD1FDE7B7B7E2EA4 /* Pods_Hackathon_Googlee.framework */; };
+		F43EAA351DC43EF500E3AFFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43EAA341DC43EF500E3AFFB /* AppDelegate.swift */; };
+		F43EAA371DC43EF500E3AFFB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43EAA361DC43EF500E3AFFB /* ViewController.swift */; };
+		F43EAA3A1DC43EF500E3AFFB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F43EAA381DC43EF500E3AFFB /* Main.storyboard */; };
+		F43EAA3C1DC43EF500E3AFFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F43EAA3B1DC43EF500E3AFFB /* Assets.xcassets */; };
+		F43EAA3F1DC43EF500E3AFFB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F43EAA3D1DC43EF500E3AFFB /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		8ACE5B95BD1FDE7B7B7E2EA4 /* Pods_Hackathon_Googlee.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hackathon_Googlee.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E35DB2EB7FC7335C39B00678 /* Pods-Hackathon-Googlee.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hackathon-Googlee.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hackathon-Googlee/Pods-Hackathon-Googlee.debug.xcconfig"; sourceTree = "<group>"; };
+		EAD92E624F33A98CE434587C /* Pods-Hackathon-Googlee.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hackathon-Googlee.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hackathon-Googlee/Pods-Hackathon-Googlee.release.xcconfig"; sourceTree = "<group>"; };
+		F43EAA311DC43EF500E3AFFB /* Hackathon-Googlee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hackathon-Googlee.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F43EAA341DC43EF500E3AFFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F43EAA361DC43EF500E3AFFB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F43EAA391DC43EF500E3AFFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F43EAA3B1DC43EF500E3AFFB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F43EAA3E1DC43EF500E3AFFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F43EAA401DC43EF500E3AFFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F43EAA2E1DC43EF500E3AFFB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D5C0DA7A2537AEB3761C6B1 /* Pods_Hackathon_Googlee.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4001B6AC47C668038629CEFB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E35DB2EB7FC7335C39B00678 /* Pods-Hackathon-Googlee.debug.xcconfig */,
+				EAD92E624F33A98CE434587C /* Pods-Hackathon-Googlee.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		7599E08E74FC842E12215F25 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8ACE5B95BD1FDE7B7B7E2EA4 /* Pods_Hackathon_Googlee.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F43EAA281DC43EF500E3AFFB = {
+			isa = PBXGroup;
+			children = (
+				F43EAA331DC43EF500E3AFFB /* Hackathon-Googlee */,
+				F43EAA321DC43EF500E3AFFB /* Products */,
+				4001B6AC47C668038629CEFB /* Pods */,
+				7599E08E74FC842E12215F25 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		F43EAA321DC43EF500E3AFFB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F43EAA311DC43EF500E3AFFB /* Hackathon-Googlee.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F43EAA331DC43EF500E3AFFB /* Hackathon-Googlee */ = {
+			isa = PBXGroup;
+			children = (
+				F43EAA341DC43EF500E3AFFB /* AppDelegate.swift */,
+				F43EAA361DC43EF500E3AFFB /* ViewController.swift */,
+				F43EAA381DC43EF500E3AFFB /* Main.storyboard */,
+				F43EAA3B1DC43EF500E3AFFB /* Assets.xcassets */,
+				F43EAA3D1DC43EF500E3AFFB /* LaunchScreen.storyboard */,
+				F43EAA401DC43EF500E3AFFB /* Info.plist */,
+			);
+			path = "Hackathon-Googlee";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F43EAA301DC43EF500E3AFFB /* Hackathon-Googlee */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F43EAA431DC43EF500E3AFFB /* Build configuration list for PBXNativeTarget "Hackathon-Googlee" */;
+			buildPhases = (
+				F194F1C7C754076E687E34BE /* [CP] Check Pods Manifest.lock */,
+				F43EAA2D1DC43EF500E3AFFB /* Sources */,
+				F43EAA2E1DC43EF500E3AFFB /* Frameworks */,
+				F43EAA2F1DC43EF500E3AFFB /* Resources */,
+				151539CAED4D74AA561FEAAC /* [CP] Embed Pods Frameworks */,
+				2EEC318A54E9AA4D7376C8AF /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Hackathon-Googlee";
+			productName = "Hackathon-Googlee";
+			productReference = F43EAA311DC43EF500E3AFFB /* Hackathon-Googlee.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F43EAA291DC43EF500E3AFFB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = "Quach Ha Chan Thanh";
+				TargetAttributes = {
+					F43EAA301DC43EF500E3AFFB = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = ZPV9U8ULVA;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = F43EAA2C1DC43EF500E3AFFB /* Build configuration list for PBXProject "Hackathon-Googlee" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F43EAA281DC43EF500E3AFFB;
+			productRefGroup = F43EAA321DC43EF500E3AFFB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F43EAA301DC43EF500E3AFFB /* Hackathon-Googlee */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F43EAA2F1DC43EF500E3AFFB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F43EAA3F1DC43EF500E3AFFB /* LaunchScreen.storyboard in Resources */,
+				F43EAA3C1DC43EF500E3AFFB /* Assets.xcassets in Resources */,
+				F43EAA3A1DC43EF500E3AFFB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		151539CAED4D74AA561FEAAC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Hackathon-Googlee/Pods-Hackathon-Googlee-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2EEC318A54E9AA4D7376C8AF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Hackathon-Googlee/Pods-Hackathon-Googlee-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F194F1C7C754076E687E34BE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F43EAA2D1DC43EF500E3AFFB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F43EAA371DC43EF500E3AFFB /* ViewController.swift in Sources */,
+				F43EAA351DC43EF500E3AFFB /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F43EAA381DC43EF500E3AFFB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F43EAA391DC43EF500E3AFFB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F43EAA3D1DC43EF500E3AFFB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F43EAA3E1DC43EF500E3AFFB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F43EAA411DC43EF500E3AFFB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F43EAA421DC43EF500E3AFFB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F43EAA441DC43EF500E3AFFB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E35DB2EB7FC7335C39B00678 /* Pods-Hackathon-Googlee.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = ZPV9U8ULVA;
+				INFOPLIST_FILE = "Hackathon-Googlee/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.thanhqhc.Hackathon-Googlee";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		F43EAA451DC43EF500E3AFFB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EAD92E624F33A98CE434587C /* Pods-Hackathon-Googlee.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = ZPV9U8ULVA;
+				INFOPLIST_FILE = "Hackathon-Googlee/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.thanhqhc.Hackathon-Googlee";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F43EAA2C1DC43EF500E3AFFB /* Build configuration list for PBXProject "Hackathon-Googlee" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F43EAA411DC43EF500E3AFFB /* Debug */,
+				F43EAA421DC43EF500E3AFFB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F43EAA431DC43EF500E3AFFB /* Build configuration list for PBXNativeTarget "Hackathon-Googlee" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F43EAA441DC43EF500E3AFFB /* Debug */,
+				F43EAA451DC43EF500E3AFFB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F43EAA291DC43EF500E3AFFB /* Project object */;
+}
