@@ -22,6 +22,9 @@ class CTViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func backAction(sender: UIButton!) {
+        self.navigationController?.popViewController(animated: true)
+    }
     
 }
 
