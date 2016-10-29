@@ -18,7 +18,17 @@ let kPhoneNumberKey = "phoneNumber"
 let kSexKey = "sex"
 let kBirthDayKey = "birthDay"
 
-class UserAccount: NSObject {
+protocol UserAccountProtocol : class {
+    func getUserID() -> String?
+    func getUserName() -> String?
+    func getAvatarURL() -> String?
+    func getEmail() -> String?
+    func getPhoneNumber() -> String?
+    func getSex() -> String?
+    func getBirthDay() -> Int?
+}
+
+class UserAccount: NSObject , UserAccountProtocol {
    
     static let sharedInstance = UserAccount()
     
@@ -29,7 +39,7 @@ class UserAccount: NSObject {
     var email: String?
     var phoneNumber: String?
     var sex: String?
-    var birthDay: Double?
+    var birthDay: Int?
     
     override init() {
         super.init()
@@ -43,7 +53,7 @@ class UserAccount: NSObject {
         self.avatarURL = data.object(forKey: kAvatarURLKey) as? String
         self.phoneNumber = data.object(forKey: kPhoneNumberKey) as? String
         self.sex = data.object(forKey: kSexKey) as? String
-        self.birthDay = data.object(forKey: kBirthDayKey) as? Double
+        self.birthDay = data.object(forKey: kBirthDayKey) as? Int
     }
     
     func updateData(withDictionary data: NSDictionary) {
@@ -52,6 +62,33 @@ class UserAccount: NSObject {
         self.avatarURL = data.object(forKey: kAvatarURLKey) as? String
         self.phoneNumber = data.object(forKey: kPhoneNumberKey) as? String
         self.sex = data.object(forKey: kSexKey) as? String
-        self.birthDay = data.object(forKey: kBirthDayKey) as? Double
+        self.birthDay = data.object(forKey: kBirthDayKey) as? Int
+    }
+    
+    func getUserID() -> String? {
+        return self.userID
+    }
+    func getUserName() -> String? {
+        return self.userName
+    }
+    func getAvatarURL() -> String? {
+        return avatarURL
+    }
+    func getEmail() -> String? {
+        return email
+    }
+    func getSex() -> String? {
+        return sex
+    }
+    func getBirthDay() -> Int? {
+        let formatter = DateFormatter()
+        let date = Date()
+        
+        formatter.dateFormat = "yy"
+        return Int.init(formatter.string(from: date))
+        
+    }
+    func getPhoneNumber() -> String? {
+        return phoneNumber
     }
 }
