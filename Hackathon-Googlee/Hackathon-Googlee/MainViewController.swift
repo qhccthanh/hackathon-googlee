@@ -42,6 +42,8 @@ class MainViewController: CTViewController {
         }
     }
     
+    var flag: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -84,50 +86,51 @@ class MainViewController: CTViewController {
                 DispatchQueue.main.async {
                     print(self.tableView)
                     self.tableView?.reloadData()
+                    self.flag = true
                 }
             }
         }
         
-//        _ = RequestManager.sharedInstance.observeData(fromPath: kEnticementPosts, withEvent: .childAdded) { (data) in
-//            
-//            if data != nil {
-//                for (postKey, postValue) in data! {
-//                    
-//                    let dict = NSMutableDictionary()
-//                    if let postValue = postValue as? NSDictionary {
-//                        dict.setObject(postKey, forKey: kPostIDKey as NSCopying)
-//                        dict.setObject(postValue[kContentKey], forKey: kContentKey as NSCopying)
-//                        dict.setObject(postValue[kNumberOfPerson], forKey: kNumberOfPerson as NSCopying)
-//                        dict.setObject(UserAccount.init(withDictionary: postValue[kHostKey] as! NSDictionary), forKey: kHostKey as NSCopying)
-//                        dict.setObject(postValue[kPostTimeKey], forKey: kPostTimeKey as NSCopying)
-//                        
-//                        let dict1 = (postValue[kCategoriesKey] as! NSArray)
-//                        var newdick = [Category]()
-//                        
-//                        for item in dict1 {
-//                            newdick.append(self.abccc(abc: item as! Int))
-//                        }
-//                        
-//                        dict.setObject(newdick, forKey: kCategoriesKey as NSCopying)
-//                        
-//                        dict.setObject(postValue[kHostLongLocationKey], forKey: kHostLongLocationKey as NSCopying)
-//                        dict.setObject(postValue[kHostLatLocationKey], forKey: kHostLatLocationKey as NSCopying)
-//                        
-//                        dict.setObject(0, forKey: kInterestedListKey as NSCopying)
-//                        dict.setObject(0, forKey: kJoinedListKey as NSCopying)
-//                        
-//                        let newPost = EnticementPost.init(withDictionary: dict)
-//                        EnticementPostManager.manager.add(newItem: newPost)
-//                        
-//                        
-//                    }
-//                }
-//                DispatchQueue.main.async {
-//                    print(self.tableView)
-//                    self.tableView?.reloadData()
-//                }
-//            }
-//        }
+            _ = RequestManager.sharedInstance.observeData(fromPath: kEnticementPosts, withEvent: .childAdded) { (data) in
+                
+                if data != nil && self.flag == true {
+                    for (postKey, postValue) in data! {
+                        
+                        let dict = NSMutableDictionary()
+                        if let postValue = postValue as? NSDictionary {
+                            dict.setObject(postKey, forKey: kPostIDKey as NSCopying)
+                            dict.setObject(postValue[kContentKey], forKey: kContentKey as NSCopying)
+                            dict.setObject(postValue[kNumberOfPerson], forKey: kNumberOfPerson as NSCopying)
+                            dict.setObject(UserAccount.init(withDictionary: postValue[kHostKey] as! NSDictionary), forKey: kHostKey as NSCopying)
+                            dict.setObject(postValue[kPostTimeKey], forKey: kPostTimeKey as NSCopying)
+                            
+                            let dict1 = (postValue[kCategoriesKey] as! NSArray)
+                            var newdick = [Category]()
+                            
+                            for item in dict1 {
+                                newdick.append(self.abccc(abc: item as! Int))
+                            }
+                            
+                            dict.setObject(newdick, forKey: kCategoriesKey as NSCopying)
+                            
+                            dict.setObject(postValue[kHostLongLocationKey], forKey: kHostLongLocationKey as NSCopying)
+                            dict.setObject(postValue[kHostLatLocationKey], forKey: kHostLatLocationKey as NSCopying)
+                            
+                            dict.setObject(0, forKey: kInterestedListKey as NSCopying)
+                            dict.setObject(0, forKey: kJoinedListKey as NSCopying)
+                            
+                            let newPost = EnticementPost.init(withDictionary: dict)
+                            EnticementPostManager.manager.add(newItem: newPost)
+                            
+                            
+                        }
+                    }
+                    DispatchQueue.main.async {
+                        print(self.tableView)
+                        self.tableView?.reloadData()
+                    }
+                }
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
