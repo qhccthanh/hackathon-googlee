@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		654D3EAC1DC488E100EC8E03 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654D3EAA1DC488E100EC8E03 /* RequestManager.swift */; };
+		654D3EB01DC4892900EC8E03 /* EnticementPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654D3EAE1DC4892900EC8E03 /* EnticementPost.swift */; };
+		654D3EB11DC4892900EC8E03 /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654D3EAF1DC4892900EC8E03 /* UserAccount.swift */; };
 		6D5C0DA7A2537AEB3761C6B1 /* Pods_Hackathon_Googlee.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ACE5B95BD1FDE7B7B7E2EA4 /* Pods_Hackathon_Googlee.framework */; };
 		BC2300101DC481E2006AE397 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC23000F1DC481E2006AE397 /* LocationManager.swift */; };
 		BCD24DD81DC4415500EBB86F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD24DD71DC4415500EBB86F /* LoginViewController.swift */; };
@@ -126,6 +129,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		654D3EAA1DC488E100EC8E03 /* RequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
+		654D3EAB1DC488E100EC8E03 /* YLExtDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLExtDefines.h; sourceTree = "<group>"; };
+		654D3EAE1DC4892900EC8E03 /* EnticementPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnticementPost.swift; sourceTree = "<group>"; };
+		654D3EAF1DC4892900EC8E03 /* UserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
 		8ACE5B95BD1FDE7B7B7E2EA4 /* Pods_Hackathon_Googlee.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hackathon_Googlee.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC23000F1DC481E2006AE397 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		BCD24DD71DC4415500EBB86F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -279,6 +286,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		654D3EA91DC488BA00EC8E03 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				654D3EAA1DC488E100EC8E03 /* RequestManager.swift */,
+				654D3EAB1DC488E100EC8E03 /* YLExtDefines.h */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7599E08E74FC842E12215F25 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -314,6 +330,7 @@
 				F43EAA401DC43EF500E3AFFB /* Info.plist */,
 				F43EAB271DC4403F00E3AFFB /* Header.h */,
 				F43EAA3B1DC43EF500E3AFFB /* Assets.xcassets */,
+				654D3EA91DC488BA00EC8E03 /* Frameworks */,
 				F43EAA481DC4401B00E3AFFB /* Utility */,
 				F4DA8CDD1DC44CA600350FE5 /* Models */,
 				F4DA8CDC1DC44CA100350FE5 /* Views */,
@@ -529,6 +546,8 @@
 		F4DA8CDD1DC44CA600350FE5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				654D3EAE1DC4892900EC8E03 /* EnticementPost.swift */,
+				654D3EAF1DC4892900EC8E03 /* UserAccount.swift */,
 				BC23000F1DC481E2006AE397 /* LocationManager.swift */,
 			);
 			name = Models;
@@ -765,9 +784,12 @@
 				F43EAB1B1DC4401B00E3AFFB /* MenuItem.swift in Sources */,
 				F43EAB211DC4401B00E3AFFB /* UIViewController+STPopup.m in Sources */,
 				F43EAB231DC4401B00E3AFFB /* UIDevice+Extension.swift in Sources */,
+				654D3EAC1DC488E100EC8E03 /* RequestManager.swift in Sources */,
+				654D3EB01DC4892900EC8E03 /* EnticementPost.swift in Sources */,
 				BCD24DE01DC448A100EBB86F /* CTViewController.swift in Sources */,
 				BCD24DDC1DC441CC00EBB86F /* StatusDetailViewController.swift in Sources */,
 				F43EAA351DC43EF500E3AFFB /* AppDelegate.swift in Sources */,
+				654D3EB11DC4892900EC8E03 /* UserAccount.swift in Sources */,
 				F43EAB261DC4401B00E3AFFB /* VersionSupport.swift in Sources */,
 				F43EAB1F1DC4401B00E3AFFB /* STPopupNavigationBar.m in Sources */,
 				F4DA8CDF1DC44CC300350FE5 /* SettingViewController.swift in Sources */,
