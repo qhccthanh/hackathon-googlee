@@ -1,0 +1,623 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6505BC7F1DC43F4C00F00E8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6505BC7E1DC43F4C00F00E8F /* AppDelegate.swift */; };
+		6505BC811DC43F4C00F00E8F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6505BC801DC43F4C00F00E8F /* ViewController.swift */; };
+		6505BC841DC43F4C00F00E8F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6505BC821DC43F4C00F00E8F /* Main.storyboard */; };
+		6505BC861DC43F4C00F00E8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6505BC851DC43F4C00F00E8F /* Assets.xcassets */; };
+		6505BC891DC43F4C00F00E8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6505BC871DC43F4C00F00E8F /* LaunchScreen.storyboard */; };
+		6505BC941DC43F4C00F00E8F /* CodeLogicGamingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6505BC931DC43F4C00F00E8F /* CodeLogicGamingTests.swift */; };
+		6505BC9F1DC43F4C00F00E8F /* CodeLogicGamingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6505BC9E1DC43F4C00F00E8F /* CodeLogicGamingUITests.swift */; };
+		654D3E921DC441BF00EC8E03 /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654D3E911DC441BF00EC8E03 /* UserAccount.swift */; };
+		654D3E941DC4440000EC8E03 /* EnticementPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654D3E931DC4440000EC8E03 /* EnticementPost.swift */; };
+		CC454C4C3C619140FC06888E /* Pods_CodeLogicGaming.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5863319831C40AB7341F9FDC /* Pods_CodeLogicGaming.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6505BC901DC43F4C00F00E8F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6505BC731DC43F4C00F00E8F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6505BC7A1DC43F4C00F00E8F;
+			remoteInfo = CodeLogicGaming;
+		};
+		6505BC9B1DC43F4C00F00E8F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6505BC731DC43F4C00F00E8F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6505BC7A1DC43F4C00F00E8F;
+			remoteInfo = CodeLogicGaming;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5863319831C40AB7341F9FDC /* Pods_CodeLogicGaming.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CodeLogicGaming.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6505BC7B1DC43F4C00F00E8F /* CodeLogicGaming.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeLogicGaming.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6505BC7E1DC43F4C00F00E8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6505BC801DC43F4C00F00E8F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6505BC831DC43F4C00F00E8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6505BC851DC43F4C00F00E8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6505BC881DC43F4C00F00E8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6505BC8A1DC43F4C00F00E8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6505BC8F1DC43F4C00F00E8F /* CodeLogicGamingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodeLogicGamingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6505BC931DC43F4C00F00E8F /* CodeLogicGamingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeLogicGamingTests.swift; sourceTree = "<group>"; };
+		6505BC951DC43F4C00F00E8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6505BC9A1DC43F4C00F00E8F /* CodeLogicGamingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodeLogicGamingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6505BC9E1DC43F4C00F00E8F /* CodeLogicGamingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeLogicGamingUITests.swift; sourceTree = "<group>"; };
+		6505BCA01DC43F4C00F00E8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		654D3E911DC441BF00EC8E03 /* UserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
+		654D3E931DC4440000EC8E03 /* EnticementPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnticementPost.swift; sourceTree = "<group>"; };
+		A4DC001D686492C05D8365F4 /* Pods-CodeLogicGaming.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodeLogicGaming.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CodeLogicGaming/Pods-CodeLogicGaming.debug.xcconfig"; sourceTree = "<group>"; };
+		EA36DCD86D3F2DD9D6B92CF5 /* Pods-CodeLogicGaming.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodeLogicGaming.release.xcconfig"; path = "Pods/Target Support Files/Pods-CodeLogicGaming/Pods-CodeLogicGaming.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6505BC781DC43F4C00F00E8F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC454C4C3C619140FC06888E /* Pods_CodeLogicGaming.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6505BC8C1DC43F4C00F00E8F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6505BC971DC43F4C00F00E8F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2515A5ECD2907EA1DBC3635E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5863319831C40AB7341F9FDC /* Pods_CodeLogicGaming.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		48FC14D5D27D62F8D2103B6A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A4DC001D686492C05D8365F4 /* Pods-CodeLogicGaming.debug.xcconfig */,
+				EA36DCD86D3F2DD9D6B92CF5 /* Pods-CodeLogicGaming.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		6505BC721DC43F4C00F00E8F = {
+			isa = PBXGroup;
+			children = (
+				6505BC7D1DC43F4C00F00E8F /* CodeLogicGaming */,
+				6505BC921DC43F4C00F00E8F /* CodeLogicGamingTests */,
+				6505BC9D1DC43F4C00F00E8F /* CodeLogicGamingUITests */,
+				6505BC7C1DC43F4C00F00E8F /* Products */,
+				48FC14D5D27D62F8D2103B6A /* Pods */,
+				2515A5ECD2907EA1DBC3635E /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		6505BC7C1DC43F4C00F00E8F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6505BC7B1DC43F4C00F00E8F /* CodeLogicGaming.app */,
+				6505BC8F1DC43F4C00F00E8F /* CodeLogicGamingTests.xctest */,
+				6505BC9A1DC43F4C00F00E8F /* CodeLogicGamingUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6505BC7D1DC43F4C00F00E8F /* CodeLogicGaming */ = {
+			isa = PBXGroup;
+			children = (
+				6505BC7E1DC43F4C00F00E8F /* AppDelegate.swift */,
+				6505BC801DC43F4C00F00E8F /* ViewController.swift */,
+				6505BC821DC43F4C00F00E8F /* Main.storyboard */,
+				6505BC851DC43F4C00F00E8F /* Assets.xcassets */,
+				6505BC871DC43F4C00F00E8F /* LaunchScreen.storyboard */,
+				6505BC8A1DC43F4C00F00E8F /* Info.plist */,
+				654D3E911DC441BF00EC8E03 /* UserAccount.swift */,
+				654D3E931DC4440000EC8E03 /* EnticementPost.swift */,
+			);
+			path = CodeLogicGaming;
+			sourceTree = "<group>";
+		};
+		6505BC921DC43F4C00F00E8F /* CodeLogicGamingTests */ = {
+			isa = PBXGroup;
+			children = (
+				6505BC931DC43F4C00F00E8F /* CodeLogicGamingTests.swift */,
+				6505BC951DC43F4C00F00E8F /* Info.plist */,
+			);
+			path = CodeLogicGamingTests;
+			sourceTree = "<group>";
+		};
+		6505BC9D1DC43F4C00F00E8F /* CodeLogicGamingUITests */ = {
+			isa = PBXGroup;
+			children = (
+				6505BC9E1DC43F4C00F00E8F /* CodeLogicGamingUITests.swift */,
+				6505BCA01DC43F4C00F00E8F /* Info.plist */,
+			);
+			path = CodeLogicGamingUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6505BC7A1DC43F4C00F00E8F /* CodeLogicGaming */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6505BCA31DC43F4C00F00E8F /* Build configuration list for PBXNativeTarget "CodeLogicGaming" */;
+			buildPhases = (
+				9F96AFE833FFFBCABE07DA04 /* [CP] Check Pods Manifest.lock */,
+				6505BC771DC43F4C00F00E8F /* Sources */,
+				6505BC781DC43F4C00F00E8F /* Frameworks */,
+				6505BC791DC43F4C00F00E8F /* Resources */,
+				15A75EA793976CE15ED26355 /* [CP] Embed Pods Frameworks */,
+				1E8B19FB68F65DD352332E46 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CodeLogicGaming;
+			productName = CodeLogicGaming;
+			productReference = 6505BC7B1DC43F4C00F00E8F /* CodeLogicGaming.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6505BC8E1DC43F4C00F00E8F /* CodeLogicGamingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6505BCA61DC43F4C00F00E8F /* Build configuration list for PBXNativeTarget "CodeLogicGamingTests" */;
+			buildPhases = (
+				6505BC8B1DC43F4C00F00E8F /* Sources */,
+				6505BC8C1DC43F4C00F00E8F /* Frameworks */,
+				6505BC8D1DC43F4C00F00E8F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6505BC911DC43F4C00F00E8F /* PBXTargetDependency */,
+			);
+			name = CodeLogicGamingTests;
+			productName = CodeLogicGamingTests;
+			productReference = 6505BC8F1DC43F4C00F00E8F /* CodeLogicGamingTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		6505BC991DC43F4C00F00E8F /* CodeLogicGamingUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6505BCA91DC43F4C00F00E8F /* Build configuration list for PBXNativeTarget "CodeLogicGamingUITests" */;
+			buildPhases = (
+				6505BC961DC43F4C00F00E8F /* Sources */,
+				6505BC971DC43F4C00F00E8F /* Frameworks */,
+				6505BC981DC43F4C00F00E8F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6505BC9C1DC43F4C00F00E8F /* PBXTargetDependency */,
+			);
+			name = CodeLogicGamingUITests;
+			productName = CodeLogicGamingUITests;
+			productReference = 6505BC9A1DC43F4C00F00E8F /* CodeLogicGamingUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6505BC731DC43F4C00F00E8F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = Googlee;
+				TargetAttributes = {
+					6505BC7A1DC43F4C00F00E8F = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 8UL2HC5M7B;
+						ProvisioningStyle = Automatic;
+					};
+					6505BC8E1DC43F4C00F00E8F = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 8UL2HC5M7B;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 6505BC7A1DC43F4C00F00E8F;
+					};
+					6505BC991DC43F4C00F00E8F = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 8UL2HC5M7B;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 6505BC7A1DC43F4C00F00E8F;
+					};
+				};
+			};
+			buildConfigurationList = 6505BC761DC43F4C00F00E8F /* Build configuration list for PBXProject "CodeLogicGaming" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6505BC721DC43F4C00F00E8F;
+			productRefGroup = 6505BC7C1DC43F4C00F00E8F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6505BC7A1DC43F4C00F00E8F /* CodeLogicGaming */,
+				6505BC8E1DC43F4C00F00E8F /* CodeLogicGamingTests */,
+				6505BC991DC43F4C00F00E8F /* CodeLogicGamingUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6505BC791DC43F4C00F00E8F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6505BC891DC43F4C00F00E8F /* LaunchScreen.storyboard in Resources */,
+				6505BC861DC43F4C00F00E8F /* Assets.xcassets in Resources */,
+				6505BC841DC43F4C00F00E8F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6505BC8D1DC43F4C00F00E8F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6505BC981DC43F4C00F00E8F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		15A75EA793976CE15ED26355 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CodeLogicGaming/Pods-CodeLogicGaming-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1E8B19FB68F65DD352332E46 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CodeLogicGaming/Pods-CodeLogicGaming-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9F96AFE833FFFBCABE07DA04 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run \'pod install\' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6505BC771DC43F4C00F00E8F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				654D3E941DC4440000EC8E03 /* EnticementPost.swift in Sources */,
+				6505BC811DC43F4C00F00E8F /* ViewController.swift in Sources */,
+				6505BC7F1DC43F4C00F00E8F /* AppDelegate.swift in Sources */,
+				654D3E921DC441BF00EC8E03 /* UserAccount.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6505BC8B1DC43F4C00F00E8F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6505BC941DC43F4C00F00E8F /* CodeLogicGamingTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6505BC961DC43F4C00F00E8F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6505BC9F1DC43F4C00F00E8F /* CodeLogicGamingUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6505BC911DC43F4C00F00E8F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6505BC7A1DC43F4C00F00E8F /* CodeLogicGaming */;
+			targetProxy = 6505BC901DC43F4C00F00E8F /* PBXContainerItemProxy */;
+		};
+		6505BC9C1DC43F4C00F00E8F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6505BC7A1DC43F4C00F00E8F /* CodeLogicGaming */;
+			targetProxy = 6505BC9B1DC43F4C00F00E8F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6505BC821DC43F4C00F00E8F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6505BC831DC43F4C00F00E8F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6505BC871DC43F4C00F00E8F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6505BC881DC43F4C00F00E8F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6505BCA11DC43F4C00F00E8F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6505BCA21DC43F4C00F00E8F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6505BCA41DC43F4C00F00E8F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A4DC001D686492C05D8365F4 /* Pods-CodeLogicGaming.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8UL2HC5M7B;
+				INFOPLIST_FILE = CodeLogicGaming/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = googlee.com.CodeLogicGaming;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		6505BCA51DC43F4C00F00E8F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA36DCD86D3F2DD9D6B92CF5 /* Pods-CodeLogicGaming.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8UL2HC5M7B;
+				INFOPLIST_FILE = CodeLogicGaming/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = googlee.com.CodeLogicGaming;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		6505BCA71DC43F4C00F00E8F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 8UL2HC5M7B;
+				INFOPLIST_FILE = CodeLogicGamingTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = googlee.com.CodeLogicGamingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CodeLogicGaming.app/CodeLogicGaming";
+			};
+			name = Debug;
+		};
+		6505BCA81DC43F4C00F00E8F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 8UL2HC5M7B;
+				INFOPLIST_FILE = CodeLogicGamingTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = googlee.com.CodeLogicGamingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CodeLogicGaming.app/CodeLogicGaming";
+			};
+			name = Release;
+		};
+		6505BCAA1DC43F4C00F00E8F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 8UL2HC5M7B;
+				INFOPLIST_FILE = CodeLogicGamingUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = googlee.com.CodeLogicGamingUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = CodeLogicGaming;
+			};
+			name = Debug;
+		};
+		6505BCAB1DC43F4C00F00E8F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 8UL2HC5M7B;
+				INFOPLIST_FILE = CodeLogicGamingUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = googlee.com.CodeLogicGamingUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = CodeLogicGaming;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6505BC761DC43F4C00F00E8F /* Build configuration list for PBXProject "CodeLogicGaming" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6505BCA11DC43F4C00F00E8F /* Debug */,
+				6505BCA21DC43F4C00F00E8F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6505BCA31DC43F4C00F00E8F /* Build configuration list for PBXNativeTarget "CodeLogicGaming" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6505BCA41DC43F4C00F00E8F /* Debug */,
+				6505BCA51DC43F4C00F00E8F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6505BCA61DC43F4C00F00E8F /* Build configuration list for PBXNativeTarget "CodeLogicGamingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6505BCA71DC43F4C00F00E8F /* Debug */,
+				6505BCA81DC43F4C00F00E8F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6505BCA91DC43F4C00F00E8F /* Build configuration list for PBXNativeTarget "CodeLogicGamingUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6505BCAA1DC43F4C00F00E8F /* Debug */,
+				6505BCAB1DC43F4C00F00E8F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6505BC731DC43F4C00F00E8F /* Project object */;
+}
