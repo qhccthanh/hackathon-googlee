@@ -304,11 +304,11 @@ extension MainViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         
-        if let vc = Utility.getViewControllerWithClass(StatusDetailViewController.classForCoder()) {
-            let popupController = STPopupController(rootViewController: vc)
-            
-            popupController?.present(in: self)
-        }
+//        if let vc = Utility.getViewControllerWithClass(StatusDetailViewController.classForCoder()) {
+//            let popupController = STPopupController(rootViewController: vc)
+//            
+//            popupController?.present(in: self)
+//        }
         
         return nil
     }
