@@ -94,6 +94,8 @@ class StatusCreationViewController: CTViewController {
             print(newPost)
             newPost.pushData2Server()
             _ = self.navigationController?.popViewController(animated: true)
+        } else {
+            Utility.showToastWithMessage("Vui lòng bật dịch vụ định vị đề đăng trạng thái.")
         }
     }
 
