@@ -10,5 +10,6 @@
 #define Header_h
 
 #import <GoogleSignIn/GoogleSignIn.h>
-
+#import "SZTextView.h"
+#import <GooglePlacePicker/GooglePlacePicker.h>
 #endif /* Header_h */

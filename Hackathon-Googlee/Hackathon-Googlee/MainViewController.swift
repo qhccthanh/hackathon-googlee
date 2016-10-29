@@ -8,16 +8,33 @@
 
 import Foundation
 import UIKit
-
+import GoogleMaps
 
 class MainViewController: CTViewController {
     
     @IBOutlet weak var tableView: UITableView?
+    weak var mapView: GMSMapView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        mapView.isMyLocationEnabled = true
+        if let mylocation = mapView.myLocation {
+            print("User's location: \(mylocation)")
+            let sydney = GMSCameraPosition.camera(withLatitude: mylocation.coordinate.latitude,
+                                                              longitude: mylocation.coordinate.longitude, zoom: 6)
+            mapView.camera = sydney
+        } else {
+            print("User's location is unknown")
+            let target = CLLocationCoordinate2D(latitude: -33.868, longitude: 151.208)
+            mapView.camera = GMSCameraPosition.camera(withTarget: target, zoom: 10)
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -44,11 +61,14 @@ extension MainViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         var cell: UITableViewCell
         cell = (indexPath.section == 0 ? tableView.dequeueReusableCell(withIdentifier: "MapViewCell") : tableView.dequeueReusableCell(withIdentifier: "InfoCell"))!
         
         if indexPath.section == 0 {
-            
+            if let mapView = cell.contentView.subviews.first as? GMSMapView {
+                self.mapView = mapView
+            }
         } else {
             
         }

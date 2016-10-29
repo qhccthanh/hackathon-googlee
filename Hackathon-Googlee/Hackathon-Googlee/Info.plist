@@ -38,6 +38,12 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Cho phép sử dụng định vị</string>
+	<key>NSLocationUsageDescription</key>
+	<string>Cho phép sử dụng định vị</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Cho phép sử dụng định vị</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
