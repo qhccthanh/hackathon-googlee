@@ -8,38 +8,12 @@
 
 import Foundation
 import UIKit
-import GooglePlaces
-import GoogleMaps
-import BSImagePicker
-import Photos
-
-class CBButton: UIButton {
-    
-    var id: Int!
-    
-}
 
 class StatusCreationViewController: CTViewController {
-    
-    @IBOutlet weak var textView: GrowingTextView!
-    @IBOutlet weak var imaegCollectionView: UICollectionView!
-    
-    @IBOutlet weak var numberPerson: UITextField!
-    @IBOutlet weak var categoriesButton: UIButton!
-    @IBOutlet weak var locationButton: UIButton!
-    @IBOutlet weak var imageButton: UIButton!
-    
-    let imagePickerController = UIImagePickerController()
-    var numberImages: [PHAsset] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.categoriesButton.contentEdgeInsets = UIEdgeInsetsMake(categoriesButton.contentEdgeInsets.top, 8, categoriesButton.contentEdgeInsets.bottom, 8)
-        self.locationButton.contentEdgeInsets = UIEdgeInsetsMake(categoriesButton.contentEdgeInsets.top, 8, categoriesButton.contentEdgeInsets.bottom, 8)
-        self.imageButton.contentEdgeInsets = UIEdgeInsetsMake(categoriesButton.contentEdgeInsets.top, 8, categoriesButton.contentEdgeInsets.bottom, 8)
-        
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -52,17 +26,6 @@ class StatusCreationViewController: CTViewController {
         
         textView.text = "Mô tả ..."
     }
-    
-//    let kNumberOfPerson = "numberOfPerson"
-//    let kHostKey = "hostID"
-//    let kPostTimeKey = "postTime"
-//    let kContentKey = "content"
-//    let kCategoriesKey = "categories"
-//    let kHostLatLocationKey = "hostLatLocation"
-//    let kHostLongLocationKey = "hostLongLocation"
-//    let kInterestedListKey = "interestedList"
-//    let kJoinedListKey = "joinedList"
-    
     
     @IBAction func addStatusAction(_ sender: AnyObject!) {
         if (LocationManager.locationManager.location != nil) {
@@ -95,128 +58,6 @@ class StatusCreationViewController: CTViewController {
             print(dict)
             
             EnticementPostManager.manager.add(newItem: EnticementPost.init(withDictionary: dict))
-        }
-    }
-    
-    @IBAction func pickCategoriesAction(_ sender: AnyObject!) {
-        
-    }
-    
-    @IBAction func pickImageAction(_ sender: AnyObject!) {
-        
-        if #available(iOS 8.0, *) {
-            
-            let alertController = UIAlertController(title: "Googlee".localized, message: "Chọn chế độ", preferredStyle: .actionSheet)
-            alertController.addAction(UIAlertAction(title: "Chọn hình trong thư viện".localized, style: .default, handler: { (_) in
-                self.imagePickerController.sourceType = .photoLibrary
-                
-//                self.navigationController?.present(self.imagePickerController, animated: true, completion: nil)
-                let vc = BSImagePickerViewController()
-                
-                self.bs_presentImagePickerController(vc, animated: true,
-                                                select: { (asset: PHAsset) -> Void in
-                                                    // User selected an asset.
-                                                    // Do something with it, start upload perhaps?
-                    }, deselect: { (asset: PHAsset) -> Void in
-                        // User deselected an assets.
-                        // Do something, cancel upload?
-                    }, cancel: { (assets: [PHAsset]) -> Void in
-                        // User cancelled. And this where the assets currently selected.
-                    }, finish: { (assets: [PHAsset]) -> Void in
-                        // User finished with these assets
-                        print(assets)
-                        self.numberImages = assets
-                        DispatchQueue.main.async {
-                            self.imaegCollectionView.reloadData()
-                        }
-                }, completion: nil)
-
-            }))
-            
-            alertController.addAction(UIAlertAction(title: "Chụp ảnh mới".localized, style: .default, handler: { (_) in
-                if UIImagePickerController.availableCaptureModes(for: .rear) != nil {
-                    self.imagePickerController.sourceType = .camera
-                    self.imagePickerController.cameraCaptureMode = .photo
-                    self.imagePickerController.modalPresentationStyle = .fullScreen
-                    
-                    self.navigationController?.present(self.imagePickerController, animated: true, completion: nil)
-                } else {
-                    self.noCamera()
-                }
-            }))
-            
-            alertController.addAction(UIAlertAction(title: "Huỷ bỏ".localized, style: .cancel, handler: { (_) in
-                alertController.dismiss(animated: true, completion: nil)
-            }))
-            
-            self.navigationController?.present(alertController, animated: true, completion: nil)
-            
-        } else {
-            Utility.showToastWithMessage("Thiết bị không hỗ trợ Camera".localized)
-        }
-
-    }
-    
-    func noCamera(){
-        
-        if #available(iOS 8.0, *) {
-            let alertVC = UIAlertController(
-                title: "Không có camera".localized,
-                message: "Thiết bị không hỗ trợ Camera".localized,
-                preferredStyle: .alert)
-            
-            let okAction = UIAlertAction(
-                title: "Đồng ý".localized,
-                style:.default,
-                handler: nil)
-            
-            alertVC.addAction(okAction)
-            self.present(alertVC, animated: true, completion: nil)
-        }
-            
-        else {
-            // Fallback on earlier versions
-        }
-    }
-    
-    var placePicker: GMSPlacePicker?
-    
-    @IBAction func pickPlaceAction(_ sender: AnyObject!) {
-        
-        let center = CLLocationCoordinate2DMake(51.5108396, -0.0922251)
-        let northEast = CLLocationCoordinate2DMake(center.latitude + 0.001, center.longitude + 0.001)
-        let southWest = CLLocationCoordinate2DMake(center.latitude - 0.001, center.longitude - 0.001)
-        let viewport = GMSCoordinateBounds(coordinate: northEast, coordinate: southWest)
-        let config = GMSPlacePickerConfig(viewport: viewport)
-        placePicker = GMSPlacePicker(config: config)
-        
-        placePicker?.pickPlace(callback: { (place, error) in
-            if let error = error {
-                print("Pick Place error: \(error.localizedDescription)")
-                return
-            }
-            
-            if let place = place {
-                print("Place name \(place.name)")
-                print("Place address \(place.formattedAddress)")
-                print("Place attributions \(place.attributions)")
-                var address = ""
-                if let addressT = place.formattedAddress {
-                    address = addressT
-                }
-                
-                self.locationButton.setTitle("\(place.name) - \(address)", for: .normal)
-            } else {
-                print("No place selected")
-            }
-        })   
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "PickCategories" {
-            if let vc = segue.destination as? CategoriesTableViewController {
-                vc.baseVC = self
-            }
         }
     }
     

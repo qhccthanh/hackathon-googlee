@@ -9,17 +9,10 @@
 import Foundation
 import CoreLocation
 
-//protocol LocationManagerDelegate: class {
-//    
-//    func locationManager(_ location: CLLocation)
-//    
-//    func locationManager(_ status: CLAuthorizationStatus)
-//}
-
-public class LocationManager: NSObject {
+class LocationManager: NSObject {
     
-//    weak var delegate: LocationManagerDelegate?
     static let locationManager = LocationManager()
+
     private var manager: CLLocationManager!
     
 
@@ -38,13 +31,11 @@ public class LocationManager: NSObject {
         manager.requestAlwaysAuthorization()
     }
     
-    public func getCurrentLocation(_ closure: @escaping (CLLocation)->()) {
-        manager.requestLocation()
-        completionBlock = closure
+    func requestPermission {
+        
     }
     
-    public func enableUpdateLocation() {
-        manager.startUpdatingLocation()
+    func getCurrentLocation {
     }
     
     public func disableUpdateLocation() {
@@ -58,13 +49,14 @@ extension LocationManager: CLLocationManagerDelegate {
         if let completion = completionBlock {
             completion(location)
         }
-    }
-    
-    public func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-    }
-    
-    public func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+    func checkPermission {
         
     }
-
+    
+    func enableUpdateLocation {
+        
+    }
+    
+    func disableUpdateLocation {
+    }
 }

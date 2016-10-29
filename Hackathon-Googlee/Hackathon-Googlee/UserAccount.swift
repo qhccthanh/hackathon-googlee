@@ -18,17 +18,7 @@ let kPhoneNumberKey = "phoneNumber"
 let kSexKey = "sex"
 let kBirthDayKey = "birthDay"
 
-protocol UserAccountProtocol : class {
-    func getUserID() -> String?
-    func getUserName() -> String?
-    func getAvatarURL() -> String?
-    func getEmail() -> String?
-    func getPhoneNumber() -> String?
-    func getSex() -> String?
-    func getBirthDay() -> Int?
-}
-
-class UserAccount: NSObject , UserAccountProtocol {
+class UserAccount: NSObject {
    
     static let sharedInstance = UserAccount()
     
@@ -39,7 +29,7 @@ class UserAccount: NSObject , UserAccountProtocol {
     var email: String?
     var phoneNumber: String?
     var sex: String?
-    var birthDay: Int?
+    var birthDay: Double?
     
     override init() {
         super.init()
@@ -51,9 +41,10 @@ class UserAccount: NSObject , UserAccountProtocol {
         self.userID = data.object(forKey: kUserIDKey) as? String
         self.userName = data.object(forKey: kUserNameKey) as? String
         self.avatarURL = data.object(forKey: kAvatarURLKey) as? String
+        self.email = data.object(forKey: kEmailKey) as? String
         self.phoneNumber = data.object(forKey: kPhoneNumberKey) as? String
         self.sex = data.object(forKey: kSexKey) as? String
-        self.birthDay = data.object(forKey: kBirthDayKey) as? Int
+        self.birthDay = data.object(forKey: kBirthDayKey) as? Double
     }
     
     func updateData(withDictionary data: NSDictionary) {
@@ -62,33 +53,25 @@ class UserAccount: NSObject , UserAccountProtocol {
         self.avatarURL = data.object(forKey: kAvatarURLKey) as? String
         self.phoneNumber = data.object(forKey: kPhoneNumberKey) as? String
         self.sex = data.object(forKey: kSexKey) as? String
-        self.birthDay = data.object(forKey: kBirthDayKey) as? Int
+        self.birthDay = data.object(forKey: kBirthDayKey) as? Double
     }
     
-    func getUserID() -> String? {
-        return self.userID
+    func pushData2Server(child: String, data: Any, path: String) {
+        RequestManager.sharedInstance.insert(child: child, withData: data, toPath: path)
     }
-    func getUserName() -> String? {
-        return self.userName
-    }
-    func getAvatarURL() -> String? {
-        return avatarURL
-    }
-    func getEmail() -> String? {
-        return email
-    }
-    func getSex() -> String? {
-        return sex
-    }
-    func getBirthDay() -> Int? {
-        let formatter = DateFormatter()
-        let date = Date()
+    
+    func convert2Dictionary() -> NSMutableDictionary{
+        let resDict: NSMutableDictionary = NSMutableDictionary()
         
-        formatter.dateFormat = "yy"
-        return Int.init(formatter.string(from: date))
+        resDict.setValue(self.userID, forKey: kUserIDKey)
+        resDict.setValue(self.userName, forKey: kUserNameKey)
+        resDict.setValue(self.avatarURL, forKey: kAvatarURLKey)
+        resDict.setValue(self.email, forKey: kEmailKey)
+        resDict.setValue(self.phoneNumber, forKey: kPhoneNumberKey)
+        resDict.setValue(self.sex, forKey: kSexKey)
+        resDict.setValue(self.birthDay, forKey: kBirthDayKey)
         
-    }
-    func getPhoneNumber() -> String? {
-        return phoneNumber
+        
+        return resDict
     }
 }

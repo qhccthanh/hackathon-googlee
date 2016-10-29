@@ -39,6 +39,8 @@ let kHostLongLocationKey = "hostLongLocation"
 let kInterestedListKey = "interestedList"
 let kJoinedListKey = "joinedList"
 
+
+
 class EnticementPost: NSObject, EnticementPostProtocol {
     
     // Properties
@@ -51,6 +53,7 @@ class EnticementPost: NSObject, EnticementPostProtocol {
     var hostLongLocation: Double?
     var interestedList: Array<UserAccount>! = Array() // Nhưng người có hứng thú vs post này
     var joinedList: Array<UserAccount>! = Array() // Danh sách người đã đăng ký
+    
     
     override init() {
         super.init()
@@ -118,6 +121,52 @@ class EnticementPost: NSObject, EnticementPostProtocol {
                 self.joinedList?.append(item as! UserAccount)
             }
         }
+    }
+    
+    func pushData2Server() {
+        //push host
+        let child = RequestManager.sharedInstance.getAutoID(withPath: kEnticementPosts)
+        let postDict = self.convert2Dictionary()
+        
+        RequestManager.sharedInstance.insert(child: child!, withData: postDict, toPath: kEnticementPosts)
+        
+    }
+    
+    func convert2Dictionary() -> NSDictionary{
+        
+        let postDict: NSMutableDictionary = NSMutableDictionary()
+        
+        let hostDict = self.host?.convert2Dictionary()
+        
+        var interestDictArr = Array<NSMutableDictionary>()
+        var joinDictArr = Array<NSMutableDictionary>()
+        var cateloriesArr = Array<Int>()
+        
+        
+        for interest in self.interestedList {
+            interestDictArr.append(interest.convert2Dictionary())
+        }
+        
+        for joiner in self.joinedList {
+            joinDictArr.append(joiner.convert2Dictionary())
+        }
+        
+        for category in self.categories {
+            let cateID = category.rawValue
+            cateloriesArr.append(cateID)
+        }
+        
+        postDict.setValue(self.postTime, forKey: kPostTimeKey)
+        postDict.setValue(self.content, forKey: kContentKey)
+        postDict.setValue(cateloriesArr, forKey: kCategoriesKey)
+        postDict.setValue(self.hostLatLocation, forKey: kHostLatLocationKey)
+        postDict.setValue(self.hostLongLocation, forKey: kHostLongLocationKey)
+        postDict.setValue(interestDictArr, forKey: kInterestedListKey)
+        postDict.setValue(joinDictArr, forKey: kJoinedListKey)
+        
+        postDict.setValue(hostDict, forKey: "hostUser")
+        
+        return postDict
     }
     
     func getHost() -> UserAccount? {
