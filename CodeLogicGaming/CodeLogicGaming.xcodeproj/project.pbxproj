@@ -51,13 +51,10 @@
 		6505BC9A1DC43F4C00F00E8F /* CodeLogicGamingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodeLogicGamingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6505BC9E1DC43F4C00F00E8F /* CodeLogicGamingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeLogicGamingUITests.swift; sourceTree = "<group>"; };
 		6505BCA01DC43F4C00F00E8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-<<<<<<< HEAD
 		654D3E911DC441BF00EC8E03 /* UserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
 		654D3E931DC4440000EC8E03 /* EnticementPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnticementPost.swift; sourceTree = "<group>"; };
-=======
 		A4DC001D686492C05D8365F4 /* Pods-CodeLogicGaming.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodeLogicGaming.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CodeLogicGaming/Pods-CodeLogicGaming.debug.xcconfig"; sourceTree = "<group>"; };
 		EA36DCD86D3F2DD9D6B92CF5 /* Pods-CodeLogicGaming.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodeLogicGaming.release.xcconfig"; path = "Pods/Target Support Files/Pods-CodeLogicGaming/Pods-CodeLogicGaming.release.xcconfig"; sourceTree = "<group>"; };
->>>>>>> 5de58bc37c4fcdeb22def4c035c436cf3e72eb03
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
