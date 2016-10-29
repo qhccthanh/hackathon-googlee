@@ -14,6 +14,8 @@
 		6505BC891DC43F4C00F00E8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6505BC871DC43F4C00F00E8F /* LaunchScreen.storyboard */; };
 		6505BC941DC43F4C00F00E8F /* CodeLogicGamingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6505BC931DC43F4C00F00E8F /* CodeLogicGamingTests.swift */; };
 		6505BC9F1DC43F4C00F00E8F /* CodeLogicGamingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6505BC9E1DC43F4C00F00E8F /* CodeLogicGamingUITests.swift */; };
+		654D3E921DC441BF00EC8E03 /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654D3E911DC441BF00EC8E03 /* UserAccount.swift */; };
+		654D3E941DC4440000EC8E03 /* EnticementPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654D3E931DC4440000EC8E03 /* EnticementPost.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		6505BC9A1DC43F4C00F00E8F /* CodeLogicGamingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodeLogicGamingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6505BC9E1DC43F4C00F00E8F /* CodeLogicGamingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeLogicGamingUITests.swift; sourceTree = "<group>"; };
 		6505BCA01DC43F4C00F00E8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		654D3E911DC441BF00EC8E03 /* UserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
+		654D3E931DC4440000EC8E03 /* EnticementPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnticementPost.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,8 @@
 				6505BC851DC43F4C00F00E8F /* Assets.xcassets */,
 				6505BC871DC43F4C00F00E8F /* LaunchScreen.storyboard */,
 				6505BC8A1DC43F4C00F00E8F /* Info.plist */,
+				654D3E911DC441BF00EC8E03 /* UserAccount.swift */,
+				654D3E931DC4440000EC8E03 /* EnticementPost.swift */,
 			);
 			path = CodeLogicGaming;
 			sourceTree = "<group>";
@@ -262,8 +268,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				654D3E941DC4440000EC8E03 /* EnticementPost.swift in Sources */,
 				6505BC811DC43F4C00F00E8F /* ViewController.swift in Sources */,
 				6505BC7F1DC43F4C00F00E8F /* AppDelegate.swift in Sources */,
+				654D3E921DC441BF00EC8E03 /* UserAccount.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,6 +520,7 @@
 				6505BCA51DC43F4C00F00E8F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6505BCA61DC43F4C00F00E8F /* Build configuration list for PBXNativeTarget "CodeLogicGamingTests" */ = {
 			isa = XCConfigurationList;
@@ -520,6 +529,7 @@
 				6505BCA81DC43F4C00F00E8F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6505BCA91DC43F4C00F00E8F /* Build configuration list for PBXNativeTarget "CodeLogicGamingUITests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +538,7 @@
 				6505BCAB1DC43F4C00F00E8F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
