@@ -86,10 +86,6 @@ class StatusCreationViewController: CTViewController {
             dict.setObject(LocationManager.locationManager.location.coordinate.latitude, forKey: kHostLatLocationKey as NSCopying)
             dict.setObject(LocationManager.locationManager.location.coordinate.longitude, forKey: kHostLongLocationKey as NSCopying)
             
-            dict.setObject(0, forKey: kInterestedListKey as NSCopying)
-            dict.setObject(0, forKey: kJoinedListKey as NSCopying)
-
-            
             let newPost = EnticementPost.init(withDictionary: dict)
             EnticementPostManager.manager.add(newItem: newPost)
             

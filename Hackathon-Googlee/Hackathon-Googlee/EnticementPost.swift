@@ -30,7 +30,7 @@ protocol EnticementPostProtocol: class {
 }
 
 let kNumberOfPerson = "numberOfPerson"
-let kHostKey = "hostUser"
+let kHostKey = "hostID"
 let kPostTimeKey = "postTime"
 let kContentKey = "content"
 let kCategoriesKey = "categories"
@@ -38,14 +38,13 @@ let kHostLatLocationKey = "hostLatLocation"
 let kHostLongLocationKey = "hostLongLocation"
 let kInterestedListKey = "interestedList"
 let kJoinedListKey = "joinedList"
-let kPostIDKey = "postID"
+
 
 
 
 class EnticementPost: NSObject, EnticementPostProtocol {
 
     // Properties
-    var postID: String?
     var host: UserAccount?
     var numberOfPerson: Int?
     var postTime: Double? // Time interval since 1970
@@ -82,7 +81,6 @@ class EnticementPost: NSObject, EnticementPostProtocol {
     init(withDictionary data: NSDictionary) {
         super.init()
         
-        self.postID = data.object(forKey: kPostIDKey) as? String
         self.numberOfPerson = data.object(forKey: kNumberOfPerson) as? Int
         self.host = data.object(forKey: kHostKey) as? UserAccount
         self.postTime = data.object(forKey: kPostTimeKey) as? Double
@@ -109,7 +107,6 @@ class EnticementPost: NSObject, EnticementPostProtocol {
     
     func updateData(withDictionary data: NSDictionary) {
         
-        self.postID = data.object(forKey: kPostIDKey) as? String
         self.numberOfPerson = data.object(forKey: kNumberOfPerson) as? Int
         self.host = data.object(forKey: kHostKey) as? UserAccount
         self.postTime = data.object(forKey: kPostTimeKey) as? Double
@@ -176,7 +173,7 @@ class EnticementPost: NSObject, EnticementPostProtocol {
         postDict.setValue(interestDictArr, forKey: kInterestedListKey)
         postDict.setValue(joinDictArr, forKey: kJoinedListKey)
         
-        postDict.setValue(hostDict, forKey: kHostKey)
+        postDict.setValue(hostDict, forKey: "hostUser")
         
         return postDict
     }

@@ -20,39 +20,7 @@ class MainViewController: CTViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        RequestManager.sharedInstance.selectDataFrom(path: kEnticementPosts) { (data) in
-            for (postKey, postValue) in data! {
-                
-                let dict = NSMutableDictionary()
-                if let postValue = postValue as? NSDictionary {
-                    dict.setObject(postKey, forKey: kPostIDKey as NSCopying)
-                    dict.setObject(postValue[kContentKey], forKey: kContentKey as NSCopying)
-                    dict.setObject(postValue[kNumberOfPerson], forKey: kNumberOfPerson as NSCopying)
-                    dict.setObject(UserAccount.init(withDictionary: postValue[kHostKey] as! NSDictionary), forKey: kHostKey as NSCopying)
-                    dict.setObject(postValue[kPostTimeKey], forKey: kPostTimeKey as NSCopying)
-                    
-                    let dict1 = (postValue[kCategoriesKey] as! NSDictionary).allValues
-                    var newdick = Array<Category>()
-                    
-                    for item in dict1 {
-                        newdick.append(Category(rawValue: item as! Int)!)
-                    }
-                    
-                    dict.setObject(dict1, forKey: kCategoriesKey as NSCopying)
-                    
-                    dict.setObject(postValue[kHostLongLocationKey], forKey: kHostLongLocationKey as NSCopying)
-                    dict.setObject(postValue[kHostLatLocationKey], forKey: kHostLatLocationKey as NSCopying)
-                    
-                    dict.setObject(0, forKey: kInterestedListKey as NSCopying)
-                    dict.setObject(0, forKey: kJoinedListKey as NSCopying)
-                    
-                    let newPost = EnticementPost.init(withDictionary: dict)
-                    EnticementPostManager.manager.add(newItem: newPost)
-                }
-            }
-        }
-        
-        _ = RequestManager.sharedInstance.observeData(fromPath: kEnticementPosts, withEvent: .childAdded) { (data) in
+        _ = RequestManager.sharedInstance.observeData(fromPath: kEnticementPosts, withEvent: .value) { (data) in
             print(data)
         }
     }
