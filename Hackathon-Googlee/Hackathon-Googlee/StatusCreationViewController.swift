@@ -21,5 +21,8 @@ class StatusCreationViewController: CTViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func addStatusAction(_ sender: AnyObject!) {
+        
+    }
     
 }

@@ -253,6 +253,7 @@
 		F43EAABF1DC4401B00E3AFFB /* VersionSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersionSupport.swift; sourceTree = "<group>"; };
 		F43EAB271DC4403F00E3AFFB /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = SOURCE_ROOT; };
 		F4DA8CDE1DC44CC300350FE5 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		F4DA8CE01DC473D600350FE5 /* Hackathon-Googlee.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Hackathon-Googlee.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -305,6 +306,7 @@
 		F43EAA331DC43EF500E3AFFB /* Hackathon-Googlee */ = {
 			isa = PBXGroup;
 			children = (
+				F4DA8CE01DC473D600350FE5 /* Hackathon-Googlee.entitlements */,
 				F43EAA461DC4400800E3AFFB /* GoogleService-Info.plist */,
 				F43EAA341DC43EF500E3AFFB /* AppDelegate.swift */,
 				F43EAA401DC43EF500E3AFFB /* Info.plist */,
@@ -503,11 +505,11 @@
 		F4DA8CDB1DC44C9700350FE5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BCD24DDF1DC448A100EBB86F /* CTViewController.swift */,
 				BCD24DD71DC4415500EBB86F /* LoginViewController.swift */,
 				BCD24DD91DC441A800EBB86F /* MainViewController.swift */,
 				BCD24DDB1DC441CC00EBB86F /* StatusDetailViewController.swift */,
 				BCD24DDD1DC441FF00EBB86F /* StatusCreationViewController.swift */,
-				BCD24DDF1DC448A100EBB86F /* CTViewController.swift */,
 				F4DA8CDE1DC44CC300350FE5 /* SettingViewController.swift */,
 			);
 			name = Controllers;
@@ -564,8 +566,13 @@
 				TargetAttributes = {
 					F43EAA301DC43EF500E3AFFB = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = BDV755QFU7;
+						DevelopmentTeam = ZPV9U8ULVA;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -887,11 +894,12 @@
 			baseConfigurationReference = E35DB2EB7FC7335C39B00678 /* Pods-Hackathon-Googlee.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = BDV755QFU7;
+				CODE_SIGN_ENTITLEMENTS = "Hackathon-Googlee/Hackathon-Googlee.entitlements";
+				DEVELOPMENT_TEAM = ZPV9U8ULVA;
 				INFOPLIST_FILE = "Hackathon-Googlee/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.daonv.Hackathon-Googlee";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.googlee.Hackathon-Googlee";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = Header.h;
 				SWIFT_VERSION = 3.0;
@@ -903,11 +911,12 @@
 			baseConfigurationReference = EAD92E624F33A98CE434587C /* Pods-Hackathon-Googlee.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = BDV755QFU7;
+				CODE_SIGN_ENTITLEMENTS = "Hackathon-Googlee/Hackathon-Googlee.entitlements";
+				DEVELOPMENT_TEAM = ZPV9U8ULVA;
 				INFOPLIST_FILE = "Hackathon-Googlee/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.daonv.Hackathon-Googlee";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.googlee.Hackathon-Googlee";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = Header.h;
 				SWIFT_VERSION = 3.0;
