@@ -32,8 +32,24 @@ class MainViewController: CTViewController {
             mapView.camera = GMSCameraPosition.camera(withTarget: target, zoom: 15)
         } else {
             print("User's location is unknown")
-            let target = CLLocationCoordinate2D(latitude: -33.868, longitude: 151.208)
-            mapView.camera = GMSCameraPosition.camera(withTarget: target, zoom: 15)
+            let target = CLLocationCoordinate2D(latitude: 10.7639531, longitude: 106.6565973)
+            mapView.camera = GMSCameraPosition.camera(withTarget: target, zoom: 10)
+            
+            let position = CLLocationCoordinate2DMake(10.7639531, 106.6565973)
+            let marker = GMSMarker(position: position)
+            marker.title = "Con chim non, trên cành cao, hót líu lo, hót líu lo, em yêu chiêm, em mến chiêm, vì mỗi lần chiêm hót em vuôi"
+            marker.map = mapView
+            
+//            let position2 = CLLocationCoordinate2DMake(10.7639531, 106.6565973)
+//            let marker2 = GMSMarker(position: position)
+//            marker2.title = "Con chim non, trên cành cao, hót líu lo, hót líu lo, em yêu chiêm, em mến chiêm, vì mỗi lần chiêm hót em vuôi"
+//            marker2.map = mapView
+//            
+//            let origin = CLLocationCoordinate2D(latitude: 10.7639531, longitude: 106.6565973)
+//            let dest = CLLocationCoordinate2D(latitude: 10.755512, longitude: 106.685809)
+//            let t = GoogleMapDirector()
+//            t.showDirection(originMarker: marker as! CTMarker, destinationMarker: marker2 as! CTMarker, mapView: mapView)
+//            
         }
         
         

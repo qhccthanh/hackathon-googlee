@@ -12,6 +12,7 @@
 		654D3EB11DC4892900EC8E03 /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654D3EAF1DC4892900EC8E03 /* UserAccount.swift */; };
 		6D5C0DA7A2537AEB3761C6B1 /* Pods_Hackathon_Googlee.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ACE5B95BD1FDE7B7B7E2EA4 /* Pods_Hackathon_Googlee.framework */; };
 		BC2300101DC481E2006AE397 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC23000F1DC481E2006AE397 /* LocationManager.swift */; };
+		BC2300181DC4E525006AE397 /* GoogleMapDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2300171DC4E525006AE397 /* GoogleMapDirector.swift */; };
 		BCD24DD81DC4415500EBB86F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD24DD71DC4415500EBB86F /* LoginViewController.swift */; };
 		BCD24DDA1DC441A800EBB86F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD24DD91DC441A800EBB86F /* MainViewController.swift */; };
 		BCD24DDC1DC441CC00EBB86F /* StatusDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD24DDB1DC441CC00EBB86F /* StatusDetailViewController.swift */; };
@@ -139,6 +140,7 @@
 		654D3EAF1DC4892900EC8E03 /* UserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
 		8ACE5B95BD1FDE7B7B7E2EA4 /* Pods_Hackathon_Googlee.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hackathon_Googlee.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC23000F1DC481E2006AE397 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		BC2300171DC4E525006AE397 /* GoogleMapDirector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleMapDirector.swift; sourceTree = "<group>"; };
 		BCD24DD71DC4415500EBB86F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BCD24DD91DC441A800EBB86F /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		BCD24DDB1DC441CC00EBB86F /* StatusDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusDetailViewController.swift; sourceTree = "<group>"; };
@@ -562,6 +564,7 @@
 				654D3EAF1DC4892900EC8E03 /* UserAccount.swift */,
 				BC23000F1DC481E2006AE397 /* LocationManager.swift */,
 				F4DA8D091DC4C55D00350FE5 /* CTMarker.swift */,
+				BC2300171DC4E525006AE397 /* GoogleMapDirector.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -822,6 +825,7 @@
 				F43EAB201DC4401B00E3AFFB /* UIResponder+STPopup.m in Sources */,
 				F43EAB1A1DC4401B00E3AFFB /* MBProgressHUD.m in Sources */,
 				F43EAB221DC4401B00E3AFFB /* String+Extension.swift in Sources */,
+				BC2300181DC4E525006AE397 /* GoogleMapDirector.swift in Sources */,
 				F43EAB1C1DC4401B00E3AFFB /* SoundManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
