@@ -41,6 +41,7 @@ class UserAccount: NSObject {
         self.userID = data.object(forKey: kUserIDKey) as? String
         self.userName = data.object(forKey: kUserNameKey) as? String
         self.avatarURL = data.object(forKey: kAvatarURLKey) as? String
+        self.email = data.object(forKey: kEmailKey) as? String
         self.phoneNumber = data.object(forKey: kPhoneNumberKey) as? String
         self.sex = data.object(forKey: kSexKey) as? String
         self.birthDay = data.object(forKey: kBirthDayKey) as? Double
@@ -53,5 +54,24 @@ class UserAccount: NSObject {
         self.phoneNumber = data.object(forKey: kPhoneNumberKey) as? String
         self.sex = data.object(forKey: kSexKey) as? String
         self.birthDay = data.object(forKey: kBirthDayKey) as? Double
+    }
+    
+    func pushData2Server(child: String, data: Any, path: String) {
+        RequestManager.sharedInstance.insert(child: child, withData: data, toPath: path)
+    }
+    
+    func convert2Dictionary() -> NSMutableDictionary{
+        let resDict: NSMutableDictionary = NSMutableDictionary()
+        
+        resDict.setValue(self.userID, forKey: kUserIDKey)
+        resDict.setValue(self.userName, forKey: kUserNameKey)
+        resDict.setValue(self.avatarURL, forKey: kAvatarURLKey)
+        resDict.setValue(self.email, forKey: kEmailKey)
+        resDict.setValue(self.phoneNumber, forKey: kPhoneNumberKey)
+        resDict.setValue(self.sex, forKey: kSexKey)
+        resDict.setValue(self.birthDay, forKey: kBirthDayKey)
+        
+        
+        return resDict
     }
 }
