@@ -10,6 +10,8 @@
 		654D3EAC1DC488E100EC8E03 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654D3EAA1DC488E100EC8E03 /* RequestManager.swift */; };
 		654D3EB01DC4892900EC8E03 /* EnticementPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654D3EAE1DC4892900EC8E03 /* EnticementPost.swift */; };
 		654D3EB11DC4892900EC8E03 /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654D3EAF1DC4892900EC8E03 /* UserAccount.swift */; };
+		654D3EBA1DC4CCDC00EC8E03 /* TSArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654D3EB91DC4CCDC00EC8E03 /* TSArray.swift */; };
+		654D3EBC1DC4CF2900EC8E03 /* EnticementPostManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654D3EBB1DC4CF2900EC8E03 /* EnticementPostManager.swift */; };
 		6D5C0DA7A2537AEB3761C6B1 /* Pods_Hackathon_Googlee.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ACE5B95BD1FDE7B7B7E2EA4 /* Pods_Hackathon_Googlee.framework */; };
 		BC2300101DC481E2006AE397 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC23000F1DC481E2006AE397 /* LocationManager.swift */; };
 		BCD24DD81DC4415500EBB86F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD24DD71DC4415500EBB86F /* LoginViewController.swift */; };
@@ -137,6 +139,8 @@
 		654D3EAB1DC488E100EC8E03 /* YLExtDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLExtDefines.h; sourceTree = "<group>"; };
 		654D3EAE1DC4892900EC8E03 /* EnticementPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnticementPost.swift; sourceTree = "<group>"; };
 		654D3EAF1DC4892900EC8E03 /* UserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
+		654D3EB91DC4CCDC00EC8E03 /* TSArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSArray.swift; sourceTree = "<group>"; };
+		654D3EBB1DC4CF2900EC8E03 /* EnticementPostManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnticementPostManager.swift; sourceTree = "<group>"; };
 		8ACE5B95BD1FDE7B7B7E2EA4 /* Pods_Hackathon_Googlee.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hackathon_Googlee.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC23000F1DC481E2006AE397 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		BCD24DD71DC4415500EBB86F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -562,6 +566,8 @@
 				654D3EAF1DC4892900EC8E03 /* UserAccount.swift */,
 				BC23000F1DC481E2006AE397 /* LocationManager.swift */,
 				F4DA8D091DC4C55D00350FE5 /* CTMarker.swift */,
+				654D3EB91DC4CCDC00EC8E03 /* TSArray.swift */,
+				654D3EBB1DC4CF2900EC8E03 /* EnticementPostManager.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -802,6 +808,7 @@
 				F4DA8CE41DC4817500350FE5 /* SZTextView.m in Sources */,
 				F43EAB1E1DC4401B00E3AFFB /* STPopupLeftBarItem.m in Sources */,
 				F43EAB191DC4401B00E3AFFB /* JLToastView.swift in Sources */,
+				654D3EBC1DC4CF2900EC8E03 /* EnticementPostManager.swift in Sources */,
 				BCD24DD81DC4415500EBB86F /* LoginViewController.swift in Sources */,
 				BCD24DDE1DC441FF00EBB86F /* StatusCreationViewController.swift in Sources */,
 				F43EAB241DC4401B00E3AFFB /* UIView+Extension.swift in Sources */,
@@ -821,6 +828,7 @@
 				F4DA8CDF1DC44CC300350FE5 /* SettingViewController.swift in Sources */,
 				F43EAB201DC4401B00E3AFFB /* UIResponder+STPopup.m in Sources */,
 				F43EAB1A1DC4401B00E3AFFB /* MBProgressHUD.m in Sources */,
+				654D3EBA1DC4CCDC00EC8E03 /* TSArray.swift in Sources */,
 				F43EAB221DC4401B00E3AFFB /* String+Extension.swift in Sources */,
 				F43EAB1C1DC4401B00E3AFFB /* SoundManager.swift in Sources */,
 			);

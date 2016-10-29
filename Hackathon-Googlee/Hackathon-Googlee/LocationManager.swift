@@ -29,8 +29,9 @@ public class LocationManager: NSObject {
     override init() {
         manager = CLLocationManager()
         super.init()
+        self.requestPermission()
+        self.enableUpdateLocation()
         manager.delegate = self
-
     }
     
     public func requestPermission() {
@@ -53,8 +54,10 @@ public class LocationManager: NSObject {
 
 extension LocationManager: CLLocationManagerDelegate {
     public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        location = locations.first
-        completionBlock!(location)
+        location = locations.last
+        if let completion = completionBlock {
+            completion(location)
+        }
     }
     
     public func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {

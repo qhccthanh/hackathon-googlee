@@ -12,7 +12,7 @@
 // Firebase path define
 #define kRootKey                    @"Googlee"
 #define kUsersKey                   @"users"
-#define kEnticementPosts                  @"endicementPosts"
+#define kEnticementPosts                  @"enticementPosts"
 
 // Notification define
 #define kNotificationUserLoggedIn               @"kNotificationUserLoggedIn"

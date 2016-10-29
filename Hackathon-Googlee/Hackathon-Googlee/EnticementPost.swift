@@ -10,14 +10,13 @@ import UIKit
 
 enum Category : Int {
     
-    case GapMat = 0
-    case ChoiGame
+    case ChoiGame = 0
+    case DiAn
     case DiDuLich
-    case ThamGiaSuKien
+    case CungNhauGapMat
     case ChuyenDo
     case TanGau
-    case DiAn
-    
+    case CungNhauDiSuKien
 }
 
 protocol EnticementPostProtocol: class {
@@ -30,6 +29,7 @@ protocol EnticementPostProtocol: class {
     func getJoinedList() -> Array<UserAccount>?
 }
 
+let kNumberOfPerson = "numberOfPerson"
 let kHostKey = "hostID"
 let kPostTimeKey = "postTime"
 let kContentKey = "content"
@@ -43,6 +43,7 @@ class EnticementPost: NSObject, EnticementPostProtocol {
     
     // Properties
     var host: UserAccount?
+    var numberOfPerson: Int?
     var postTime: Double? // Time interval since 1970
     var content: String?
     var categories: Array<Category>! = Array()
@@ -55,9 +56,27 @@ class EnticementPost: NSObject, EnticementPostProtocol {
         super.init()
     }
     
+    class func categoryNameToNumber(name: String) -> Int {
+        switch name {
+        case "Chơi game":
+            return 0
+        case "Đi ăn":
+            return 1
+        case "Đi du lịch":
+            return 2
+        case "Cùng nhau gặp mặt":
+            return 3
+        case"Tán gẫu":
+            return 4
+        default:
+            return 5
+        }
+    }
+    
     init(withDictionary data: NSDictionary) {
         super.init()
         
+        self.numberOfPerson = data.object(forKey: kNumberOfPerson) as? Int
         self.host = data.object(forKey: kHostKey) as? UserAccount
         self.postTime = data.object(forKey: kPostTimeKey) as? Double
         self.content = data.object(forKey: kContentKey) as? String
@@ -79,6 +98,8 @@ class EnticementPost: NSObject, EnticementPostProtocol {
     }
     
     func updateData(withDictionary data: NSDictionary) {
+        
+        self.numberOfPerson = data.object(forKey: kNumberOfPerson) as? Int
         self.host = data.object(forKey: kHostKey) as? UserAccount
         self.postTime = data.object(forKey: kPostTimeKey) as? Double
         self.content = data.object(forKey: kContentKey) as? String

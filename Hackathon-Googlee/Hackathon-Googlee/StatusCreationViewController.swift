@@ -53,8 +53,49 @@ class StatusCreationViewController: CTViewController {
         textView.text = "Mô tả ..."
     }
     
+//    let kNumberOfPerson = "numberOfPerson"
+//    let kHostKey = "hostID"
+//    let kPostTimeKey = "postTime"
+//    let kContentKey = "content"
+//    let kCategoriesKey = "categories"
+//    let kHostLatLocationKey = "hostLatLocation"
+//    let kHostLongLocationKey = "hostLongLocation"
+//    let kInterestedListKey = "interestedList"
+//    let kJoinedListKey = "joinedList"
+    
+    
     @IBAction func addStatusAction(_ sender: AnyObject!) {
-        
+        if (LocationManager.locationManager.location != nil) {
+            let dict = NSMutableDictionary()
+
+            dict.setObject(textView.text, forKey: kContentKey as NSCopying)
+            dict.setObject(Int.init(numberPerson.text!)!, forKey: kNumberOfPerson as NSCopying)
+            dict.setObject(UserAccount.sharedInstance, forKey: kHostKey as NSCopying)
+            dict.setObject(Date.timeIntervalSinceReferenceDate, forKey: kPostTimeKey as NSCopying)
+            
+            var categories = self.categoriesButton.currentTitle
+            categories?.characters.removeFirst()
+            
+            let dict1 = NSMutableDictionary()
+            
+            var index = 0
+            for string in (categories?.components(separatedBy: ", "))! {
+                dict1.setValue(EnticementPost.categoryNameToNumber(name: string), forKey: "\(index)")
+                
+                print(string)
+                print(index)
+                index = index + 1
+            }
+            
+            dict.setObject(dict1, forKey: kCategoriesKey as NSCopying)
+            
+            dict.setObject(LocationManager.locationManager.location.coordinate.latitude, forKey: kHostLatLocationKey as NSCopying)
+            dict.setObject(LocationManager.locationManager.location.coordinate.longitude, forKey: kHostLongLocationKey as NSCopying)
+            
+            print(dict)
+            
+            EnticementPostManager.manager.add(newItem: EnticementPost.init(withDictionary: dict))
+        }
     }
     
     @IBAction func pickCategoriesAction(_ sender: AnyObject!) {
@@ -238,7 +279,5 @@ extension StatusCreationViewController: UICollectionViewDelegate {
         
         return CGSize(width: collectionView.getSize().width / 3 - 5 ,height: (collectionView.getSize().width / 3 - 5) * 4 / 3 )
     }
-
-    
 }
 

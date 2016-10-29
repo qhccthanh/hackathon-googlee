@@ -16,11 +16,15 @@ class MainViewController: CTViewController {
     weak var mapView: GMSMapView!
     var datasources: [EnticementPostProtocol] = []
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        
+        _ = RequestManager.sharedInstance.observeData(fromPath: kEnticementPosts, withEvent: .val) { (data) in
+            print(data)
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
