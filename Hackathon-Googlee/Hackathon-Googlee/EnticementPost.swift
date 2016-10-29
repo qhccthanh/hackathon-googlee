@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum Category : Int {
+public enum Category : Int {
     
     case ChoiGame = 0
     case DiAn
@@ -49,7 +49,7 @@ class EnticementPost: NSObject, EnticementPostProtocol {
     var numberOfPerson: Int?
     var postTime: Double? // Time interval since 1970
     var content: String?
-    var categories: Array<Category>! = Array()
+    var categories: Array<Category>! =  Array<Category>()
     var hostLatLocation: Double?
     var hostLongLocation: Double?
     var interestedList: Array<UserAccount>! = Array() // Nhưng người có hứng thú vs post này
@@ -79,6 +79,25 @@ class EnticementPost: NSObject, EnticementPostProtocol {
         }
     }
     
+    class func categoryNumberToName(num: Int) -> String{
+        switch num {
+        case 0:
+            return "Chơigame"
+        case 1:
+            return "Đi ăn"
+        case 2:
+            return "Đi du lịch"
+        case 3:
+            return "Cùng nhau gặp mặt"
+        case 4:
+            return "Chuyển đồ"
+        case 5:
+            return "Tán gẫu"
+        default:
+            return "Cùng nhau đi sự kiện"
+        }
+    }
+    
     init(withDictionary data: NSDictionary) {
         super.init()
         
@@ -91,7 +110,14 @@ class EnticementPost: NSObject, EnticementPostProtocol {
         
         print((data.object(forKey: kCategoriesKey) as? NSDictionary)?.allValues)
         
-        self.categories = (data.object(forKey: kCategoriesKey) as? NSDictionary)?.allValues as? [Category]
+        var temp =  data.object(forKey: kCategoriesKey) as! NSArray
+        for t in temp {
+            if let t = t as? Hackathon_Googlee.Category {
+               self.categories.append(t)
+            }
+        }
+        
+       // self.categories =
         self.hostLatLocation = data.object(forKey: kHostLatLocationKey) as? Double
         self.hostLongLocation = data.object(forKey: kHostLongLocationKey) as? Double
         
@@ -177,7 +203,7 @@ class EnticementPost: NSObject, EnticementPostProtocol {
         postDict.setValue(self.hostLongLocation, forKey: kHostLongLocationKey)
         postDict.setValue(interestDictArr, forKey: kInterestedListKey)
         postDict.setValue(joinDictArr, forKey: kJoinedListKey)
-        
+        postDict.setValue(self.numberOfPerson, forKey: kNumberOfPerson)
         
         postDict.setValue(hostDict, forKey: kHostKey)
 
@@ -207,20 +233,33 @@ class EnticementPost: NSObject, EnticementPostProtocol {
     }
     func getHostLocation(completion: ((String?) -> Void)?) {
         
-        let webServiceURL = URL.init(string: "http://maps.googleapis.com/maps/api/geocode/json?latlng=" + "\(hostLatLocation)" + "," + "\(hostLongLocation)")
-        
+        let webServiceURL = URL.init(string: "http://maps.googleapis.com/maps/api/geocode/json?latlng=" + "\(hostLatLocation!)" + "," + "\(hostLongLocation!)")
+        print(webServiceURL?.absoluteString)
         if (self.hostLongLocation == nil || self.hostLongLocation == nil || webServiceURL == nil) {
             completion?(nil)
+            return
         }
         
-        _ = URLSession.shared.dataTask(with: webServiceURL!) { (data, response, error) in
+        let session = URLSession.shared.dataTask(with: webServiceURL!) { (data, response, error) in
             if (error != nil || data == nil) {
                 completion?(nil)
+                return
             }
             
-            let dicData: NSDictionary = (try! JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableLeaves) as! NSDictionary).value(forKey: "results") as! NSDictionary
-            completion?(dicData.value(forKey: "formatted_address") as! String?)
+          //  let dicData: NSDictionary = (try! JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableLeaves) as! NSDictionary).value(forKey: "results") as! NSDictionary
+            if let dicData = try? JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableLeaves),
+                let dic = dicData as? NSDictionary,
+                let value = dic["results"] as? NSArray {
+                print(value)
+                if let first = value.firstObject, let value = first as? NSDictionary {
+                    completion?(value["formatted_address"] as! String?)
+                }
+                
+            }
+            
+            
         }
+        session.resume()
     }
 }
 

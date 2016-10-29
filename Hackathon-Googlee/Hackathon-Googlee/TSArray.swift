@@ -9,7 +9,7 @@
 import UIKit
 
 class TSArray: NSObject {
-    private var internalArray = NSMutableArray()
+    var internalArray = NSMutableArray()
     private var serialQueue = DispatchQueue.init(label: "serialQueue")
     
     func append(newItem: Any!) {

@@ -14,48 +14,120 @@ class MainViewController: CTViewController {
     
     @IBOutlet weak var tableView: UITableView?
     weak var mapView: GMSMapView!
-    var datasources: [EnticementPostProtocol] = []
+  //  var datasources: [EnticementPostProtocol] = []
+//    case ChoiGame = 0
+//    case DiAn
+//    case DiDuLich
+//    case CungNhauGapMat
+//    case ChuyenDo
+//    case TanGau
+//    case CungNhauDiSuKien
+    func abccc(abc: Int) -> Category {
+        switch abc {
+        case 0:
+            return .ChoiGame
+        case 1:
+            return .DiAn
+        case 2:
+            return .DiDuLich
+        case 3:
+            return .CungNhauGapMat
+        case 4:
+            return .ChuyenDo
+        case 5:
+            return .TanGau
+
+        default:
+            return .CungNhauDiSuKien
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        tableView?.dataSource = self
+        
         RequestManager.sharedInstance.selectDataFrom(path: kEnticementPosts) { (data) in
-            for (postKey, postValue) in data! {
-                
-                let dict = NSMutableDictionary()
-                if let postValue = postValue as? NSDictionary {
-                    dict.setObject(postKey, forKey: kPostIDKey as NSCopying)
-                    dict.setObject(postValue[kContentKey], forKey: kContentKey as NSCopying)
-                    dict.setObject(postValue[kNumberOfPerson], forKey: kNumberOfPerson as NSCopying)
-                    dict.setObject(UserAccount.init(withDictionary: postValue[kHostKey] as! NSDictionary), forKey: kHostKey as NSCopying)
-                    dict.setObject(postValue[kPostTimeKey], forKey: kPostTimeKey as NSCopying)
+            if data != nil {
+                for (postKey, postValue) in data! {
                     
-                    let dict1 = (postValue[kCategoriesKey] as! NSDictionary).allValues
-                    var newdick = Array<Category>()
-                    
-                    for item in dict1 {
-                        newdick.append(Category(rawValue: item as! Int)!)
+                    let dict = NSMutableDictionary()
+                    if let postValue = postValue as? NSDictionary {
+                        dict.setObject(postKey, forKey: kPostIDKey as NSCopying)
+                        dict.setObject(postValue[kContentKey], forKey: kContentKey as NSCopying)
+                        dict.setObject(postValue[kNumberOfPerson], forKey: kNumberOfPerson as NSCopying)
+                        dict.setObject(UserAccount.init(withDictionary: postValue[kHostKey] as! NSDictionary), forKey: kHostKey as NSCopying)
+                        dict.setObject(postValue[kPostTimeKey], forKey: kPostTimeKey as NSCopying)
+                        
+                        let dict1 = (postValue[kCategoriesKey] as! NSArray)
+                        var newdick = [Category]()
+                        
+                        for item in dict1 {
+                            newdick.append(self.abccc(abc: item as! Int))
+                        }
+                        
+                        dict.setObject(newdick, forKey: kCategoriesKey as NSCopying)
+                        
+                        dict.setObject(postValue[kHostLongLocationKey], forKey: kHostLongLocationKey as NSCopying)
+                        dict.setObject(postValue[kHostLatLocationKey], forKey: kHostLatLocationKey as NSCopying)
+                        
+                        dict.setObject(0, forKey: kInterestedListKey as NSCopying)
+                        dict.setObject(0, forKey: kJoinedListKey as NSCopying)
+                        
+                        let newPost = EnticementPost.init(withDictionary: dict)
+                        EnticementPostManager.manager.add(newItem: newPost)
+                        
+                        
                     }
-                    
-                    dict.setObject(dict1, forKey: kCategoriesKey as NSCopying)
-                    
-                    dict.setObject(postValue[kHostLongLocationKey], forKey: kHostLongLocationKey as NSCopying)
-                    dict.setObject(postValue[kHostLatLocationKey], forKey: kHostLatLocationKey as NSCopying)
-                    
-                    dict.setObject(0, forKey: kInterestedListKey as NSCopying)
-                    dict.setObject(0, forKey: kJoinedListKey as NSCopying)
-                    
-                    let newPost = EnticementPost.init(withDictionary: dict)
-                    EnticementPostManager.manager.add(newItem: newPost)
+                }
+                DispatchQueue.main.async {
+                    print(self.tableView)
+                    self.tableView?.reloadData()
                 }
             }
         }
         
-        _ = RequestManager.sharedInstance.observeData(fromPath: kEnticementPosts, withEvent: .childAdded) { (data) in
-
-            print(data)
-        }
+//        _ = RequestManager.sharedInstance.observeData(fromPath: kEnticementPosts, withEvent: .childAdded) { (data) in
+//            
+//            if data != nil {
+//                for (postKey, postValue) in data! {
+//                    
+//                    let dict = NSMutableDictionary()
+//                    if let postValue = postValue as? NSDictionary {
+//                        dict.setObject(postKey, forKey: kPostIDKey as NSCopying)
+//                        dict.setObject(postValue[kContentKey], forKey: kContentKey as NSCopying)
+//                        dict.setObject(postValue[kNumberOfPerson], forKey: kNumberOfPerson as NSCopying)
+//                        dict.setObject(UserAccount.init(withDictionary: postValue[kHostKey] as! NSDictionary), forKey: kHostKey as NSCopying)
+//                        dict.setObject(postValue[kPostTimeKey], forKey: kPostTimeKey as NSCopying)
+//                        
+//                        let dict1 = (postValue[kCategoriesKey] as! NSArray)
+//                        var newdick = [Category]()
+//                        
+//                        for item in dict1 {
+//                            newdick.append(self.abccc(abc: item as! Int))
+//                        }
+//                        
+//                        dict.setObject(newdick, forKey: kCategoriesKey as NSCopying)
+//                        
+//                        dict.setObject(postValue[kHostLongLocationKey], forKey: kHostLongLocationKey as NSCopying)
+//                        dict.setObject(postValue[kHostLatLocationKey], forKey: kHostLatLocationKey as NSCopying)
+//                        
+//                        dict.setObject(0, forKey: kInterestedListKey as NSCopying)
+//                        dict.setObject(0, forKey: kJoinedListKey as NSCopying)
+//                        
+//                        let newPost = EnticementPost.init(withDictionary: dict)
+//                        EnticementPostManager.manager.add(newItem: newPost)
+//                        
+//                        
+//                    }
+//                }
+//                DispatchQueue.main.async {
+//                    print(self.tableView)
+//                    self.tableView?.reloadData()
+//                }
+//            }
+//        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -108,11 +180,12 @@ extension MainViewController: UITableViewDataSource {
         if section == 0 {
             return 1
         }
-        
-        return self.datasources.count
+        print(EnticementPostManager.manager.list.internalArray.count)
+        return EnticementPostManager.manager.list.internalArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         
         var cell: UITableViewCell
         cell = (indexPath.section == 0 ? tableView.dequeueReusableCell(withIdentifier: "MapViewCell") : tableView.dequeueReusableCell(withIdentifier: "InfoCell"))!
@@ -122,6 +195,8 @@ extension MainViewController: UITableViewDataSource {
                 self.mapView = mapView
             }
         } else {
+            
+            let itemData: EnticementPost = EnticementPostManager.manager.list.internalArray[indexPath.row] as! EnticementPost
             
             for var i in 1...8 {
                 if let button = cell.contentView.viewWithTag(i) as? CBButton, i < 5 {
@@ -140,7 +215,31 @@ extension MainViewController: UITableViewDataSource {
                 } // 5 -> 7 content, tag, location
                 else if let label = cell.contentView.viewWithTag(i) as? UILabel, i < 8 {
                     
-                   label.text = "Hỗ Báo Hỗ Báo"
+                    switch i {
+                    case 5:
+                        label.text = itemData.getContent()
+                    case 6:
+                        var newText = ""
+                        
+                        if let abc = itemData.getCategories() {
+                            for category in abc {
+                                newText = newText + EnticementPost.categoryNumberToName(num: category.rawValue)
+                                newText = newText + ", "
+                            }
+                        }
+                        if newText != "" {
+                            newText.characters.removeLast()
+                            newText.characters.removeLast()
+                        }
+                        
+                        label.text = newText
+                        
+                    default:
+                        itemData.getHostLocation(completion: { (string) in
+                            DispatchQueue.main.async {
+                                label.text = string                            }
+                        })
+                    }
                 } else if let imageView = cell.contentView.viewWithTag(i) as? UIImageView {
                     //
                     imageView.image = UIImage(named: "Left Footprint-96")
@@ -157,7 +256,13 @@ extension MainViewController: UITableViewDataSource {
     
     func touchLocationCellAction(_ sender: CBButton!) {
         let id = sender.id
-        // item
+        
+        if let item = EnticementPostManager.manager.list.internalArray[id!] as? EnticementPost {
+            let location = CLLocationCoordinate2D(latitude: item.hostLatLocation!, longitude: item.hostLongLocation!)
+            
+            mapView.animate(to: GMSCameraPosition(target: location, zoom: 16, bearing: 0, viewingAngle: 0))
+        }
+        
     }
     
     func touchJoinCellAction(_ sender: CBButton!) {
