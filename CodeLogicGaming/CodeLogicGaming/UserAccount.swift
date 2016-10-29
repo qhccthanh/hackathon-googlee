@@ -9,29 +9,27 @@
 import UIKit
 import Firebase
 
-enum Sex : Int {
-    case Male = 1
-    case Female
-}
+
+let kUserIDKey = "userID"
+let kUserNameKey = "userName"
+let kAvatarURLKey = "avatarURL"
+let kEmailKey = "email"
+let kPhoneNumberKey = "phoneNumber"
+let kSexKey = "sex"
+let kBirthDayKey = "birthDay"
 
 class UserAccount: NSObject {
    
+    static let sharedInstance = UserAccount()
+    
     // Properies
     var userID: String?
     var userName: String?
     var avatarURL: String?
     var email: String?
     var phoneNumber: String?
-    var sex: Sex?
+    var sex: String?
     var birthDay: Double?
-    
-    let kUserIDKey = "userID"
-    let kUserNameKey = "userName"
-    let kAvatarURLKey = "avatarURL"
-    let kEmailKey = "email"
-    let kPhoneNumberKey = "phoneNumber"
-    let kSexKey = "sex"
-    let kBirthDayKey = "birthDay"
     
     override init() {
         super.init()
@@ -44,7 +42,16 @@ class UserAccount: NSObject {
         self.userName = data.object(forKey: kUserNameKey) as? String
         self.avatarURL = data.object(forKey: kAvatarURLKey) as? String
         self.phoneNumber = data.object(forKey: kPhoneNumberKey) as? String
-        self.sex = data.object(forKey: kSexKey) as? Sex
+        self.sex = data.object(forKey: kSexKey) as? String
+        self.birthDay = data.object(forKey: kBirthDayKey) as? Double
+    }
+    
+    func updateData(withDictionary data: NSDictionary) {
+        self.userID = data.object(forKey: kUserIDKey) as? String
+        self.userName = data.object(forKey: kUserNameKey) as? String
+        self.avatarURL = data.object(forKey: kAvatarURLKey) as? String
+        self.phoneNumber = data.object(forKey: kPhoneNumberKey) as? String
+        self.sex = data.object(forKey: kSexKey) as? String
         self.birthDay = data.object(forKey: kBirthDayKey) as? Double
     }
 }
