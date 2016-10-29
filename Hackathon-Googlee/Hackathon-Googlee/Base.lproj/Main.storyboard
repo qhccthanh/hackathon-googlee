@@ -177,19 +177,27 @@
                                                         <constraint firstItem="ziC-sn-oRb" firstAttribute="leading" secondItem="rrn-4v-rUF" secondAttribute="leading" id="zja-yi-Lop"/>
                                                     </constraints>
                                                 </view>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PfB-ba-l9a" customClass="CBButton" customModule="Hackathon_Googlee" customModuleProvider="target">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="32" id="Vi1-ct-Wto"/>
+                                                        <constraint firstAttribute="width" constant="32" id="e6N-dr-cx2"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button" backgroundImage="Define Location-96"/>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="A7X-1a-TVo" firstAttribute="leading" secondItem="U1K-F7-2y0" secondAttribute="leading" constant="8" id="0G4-TF-JsU"/>
                                                 <constraint firstAttribute="trailing" secondItem="Vz2-8N-K24" secondAttribute="trailing" constant="8" id="B1q-Wj-e24"/>
+                                                <constraint firstItem="PfB-ba-l9a" firstAttribute="top" secondItem="gxb-Mw-fnC" secondAttribute="top" id="EXR-ql-hzh"/>
                                                 <constraint firstItem="Vz2-8N-K24" firstAttribute="leading" secondItem="U1K-F7-2y0" secondAttribute="leading" constant="8" id="JgX-a1-o0p"/>
                                                 <constraint firstItem="gxb-Mw-fnC" firstAttribute="top" secondItem="A7X-1a-TVo" secondAttribute="top" id="Jqz-Go-Ys3"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="gxb-Mw-fnC" secondAttribute="trailing" id="KEU-Qz-IFz"/>
                                                 <constraint firstItem="6qG-E6-5Ki" firstAttribute="leading" secondItem="gxb-Mw-fnC" secondAttribute="leading" id="PQe-Cz-lGf"/>
                                                 <constraint firstAttribute="bottom" secondItem="Vz2-8N-K24" secondAttribute="bottom" id="UCa-ac-Oq7"/>
+                                                <constraint firstItem="PfB-ba-l9a" firstAttribute="trailing" secondItem="U1K-F7-2y0" secondAttribute="trailingMargin" id="UQO-18-JX6"/>
                                                 <constraint firstItem="A7X-1a-TVo" firstAttribute="top" secondItem="U1K-F7-2y0" secondAttribute="top" constant="8" id="US5-5Y-MBY"/>
-                                                <constraint firstItem="6qG-E6-5Ki" firstAttribute="trailing" secondItem="gxb-Mw-fnC" secondAttribute="trailing" id="cjd-ir-mq7"/>
                                                 <constraint firstItem="6qG-E6-5Ki" firstAttribute="top" secondItem="gxb-Mw-fnC" secondAttribute="bottom" constant="2" id="nJt-al-UgW"/>
                                                 <constraint firstItem="gxb-Mw-fnC" firstAttribute="leading" secondItem="A7X-1a-TVo" secondAttribute="trailing" constant="8" id="qES-e8-d28"/>
+                                                <constraint firstItem="PfB-ba-l9a" firstAttribute="leading" secondItem="gxb-Mw-fnC" secondAttribute="trailing" constant="8" id="wuL-jv-NYh"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -209,7 +217,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Googlee" id="2HA-Oc-Odc">
-                        <barButtonItem key="leftBarButtonItem" image="More-48" id="Po9-cX-Xt6">
+                        <barButtonItem key="leftBarButtonItem" image="Settings-48" id="Po9-cX-Xt6">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="d8M-LA-gfX" kind="show" id="97n-06-nwV"/>
@@ -225,7 +233,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LRJ-56-ahu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1357.5999999999999" y="-281.10944527736132"/>
+            <point key="canvasLocation" x="1357.5" y="-282.04225352112678"/>
         </scene>
         <!--Chi tiết mục-->
         <scene sceneID="mET-Gx-EzU">
@@ -301,12 +309,15 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="Phone-48" id="UZP-nY-ylO">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="callAction:" destination="3Sj-Dt-Cyc" id="6NE-Kn-nkx"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ohO-53-mGC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="516" y="938"/>
+            <point key="canvasLocation" x="99" y="953"/>
         </scene>
         <!--Thông tin-->
         <scene sceneID="fPl-HO-Nc6">
@@ -690,10 +701,11 @@
         <image name="Bar-96" width="48" height="48"/>
         <image name="Christmas Star" width="26" height="26"/>
         <image name="Create New-48" width="24" height="24"/>
+        <image name="Define Location-96" width="48" height="48"/>
         <image name="Joining Queue Filled-50" width="25" height="25"/>
         <image name="Link-48" width="24" height="24"/>
-        <image name="More-48" width="24" height="24"/>
         <image name="Phone-48" width="24" height="24"/>
+        <image name="Settings-48" width="24" height="24"/>
         <image name="User Male-96" width="48" height="48"/>
     </resources>
 </document>

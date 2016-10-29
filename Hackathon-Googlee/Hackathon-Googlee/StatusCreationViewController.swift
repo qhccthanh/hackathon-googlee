@@ -13,6 +13,12 @@ import GoogleMaps
 import BSImagePicker
 import Photos
 
+class CBButton: UIButton {
+    
+    var id: Int!
+    
+}
+
 class StatusCreationViewController: CTViewController {
     
     @IBOutlet weak var textView: GrowingTextView!
@@ -44,7 +50,7 @@ class StatusCreationViewController: CTViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        textView.placeHolder = "Mô tả ..."
+        textView.text = "Mô tả ..."
     }
     
     @IBAction func addStatusAction(_ sender: AnyObject!) {

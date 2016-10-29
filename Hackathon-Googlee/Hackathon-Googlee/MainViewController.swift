@@ -70,11 +70,18 @@ extension MainViewController: UITableViewDataSource {
             }
         } else {
             
+            if let button = cell.contentView.viewWithTag(1) as? CBButton {
+                button.id = indexPath.row
+                button.addTarget(self, action: #selector(self.touchLocationCellAction), for: .touchUpInside)
+            }
         }
         
         return cell
     }
     
+    func touchLocationCellAction(_ sender: CBButton!) {
+        let id = sender.id
+    }
     
 }
 
@@ -83,7 +90,9 @@ extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         
         if let vc = Utility.getViewControllerWithClass(StatusDetailViewController.classForCoder()) {
-            self.navigationController?.pushViewController(vc, animated: true)
+            let popupController = STPopupController(rootViewController: vc)
+            
+            popupController?.present(in: self)
         }
         
         return nil
