@@ -127,7 +127,8 @@ class MainViewController: CTViewController {
                     }
                     DispatchQueue.main.async {
                         print(self.tableView)
-                        self.tableView?.reloadData()
+                        //self.tableView?.reloadData()
+                        self.tableView?.insertRows(at: [IndexPath.init(row: 0, section: 1)], with: UITableViewRowAnimation.top)
                     }
                 }
         }
