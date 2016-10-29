@@ -10,25 +10,41 @@ import Foundation
 import UIKit
 import GooglePlaces
 import GoogleMaps
-
+import BSImagePicker
+import Photos
 
 class StatusCreationViewController: CTViewController {
     
     @IBOutlet weak var textView: GrowingTextView!
+    @IBOutlet weak var imaegCollectionView: UICollectionView!
+    
     @IBOutlet weak var numberPerson: UITextField!
     @IBOutlet weak var categoriesButton: UIButton!
     @IBOutlet weak var locationButton: UIButton!
+    @IBOutlet weak var imageButton: UIButton!
+    
+    let imagePickerController = UIImagePickerController()
+    var numberImages: [PHAsset] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.categoriesButton.contentEdgeInsets = UIEdgeInsetsMake(categoriesButton.contentEdgeInsets.top, 8, categoriesButton.contentEdgeInsets.bottom, 8)
         self.locationButton.contentEdgeInsets = UIEdgeInsetsMake(categoriesButton.contentEdgeInsets.top, 8, categoriesButton.contentEdgeInsets.bottom, 8)
+        self.imageButton.contentEdgeInsets = UIEdgeInsetsMake(categoriesButton.contentEdgeInsets.top, 8, categoriesButton.contentEdgeInsets.bottom, 8)
+        
+        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        textView.placeHolder = "Mô tả ..."
     }
     
     @IBAction func addStatusAction(_ sender: AnyObject!) {
@@ -37,6 +53,83 @@ class StatusCreationViewController: CTViewController {
     
     @IBAction func pickCategoriesAction(_ sender: AnyObject!) {
         
+    }
+    
+    @IBAction func pickImageAction(_ sender: AnyObject!) {
+        
+        if #available(iOS 8.0, *) {
+            
+            let alertController = UIAlertController(title: "Googlee".localized, message: "Chọn chế độ", preferredStyle: .actionSheet)
+            alertController.addAction(UIAlertAction(title: "Chọn hình trong thư viện".localized, style: .default, handler: { (_) in
+                self.imagePickerController.sourceType = .photoLibrary
+                
+//                self.navigationController?.present(self.imagePickerController, animated: true, completion: nil)
+                let vc = BSImagePickerViewController()
+                
+                self.bs_presentImagePickerController(vc, animated: true,
+                                                select: { (asset: PHAsset) -> Void in
+                                                    // User selected an asset.
+                                                    // Do something with it, start upload perhaps?
+                    }, deselect: { (asset: PHAsset) -> Void in
+                        // User deselected an assets.
+                        // Do something, cancel upload?
+                    }, cancel: { (assets: [PHAsset]) -> Void in
+                        // User cancelled. And this where the assets currently selected.
+                    }, finish: { (assets: [PHAsset]) -> Void in
+                        // User finished with these assets
+                        print(assets)
+                        self.numberImages = assets
+                        DispatchQueue.main.async {
+                            self.imaegCollectionView.reloadData()
+                        }
+                }, completion: nil)
+
+            }))
+            
+            alertController.addAction(UIAlertAction(title: "Chụp ảnh mới".localized, style: .default, handler: { (_) in
+                if UIImagePickerController.availableCaptureModes(for: .rear) != nil {
+                    self.imagePickerController.sourceType = .camera
+                    self.imagePickerController.cameraCaptureMode = .photo
+                    self.imagePickerController.modalPresentationStyle = .fullScreen
+                    
+                    self.navigationController?.present(self.imagePickerController, animated: true, completion: nil)
+                } else {
+                    self.noCamera()
+                }
+            }))
+            
+            alertController.addAction(UIAlertAction(title: "Huỷ bỏ".localized, style: .cancel, handler: { (_) in
+                alertController.dismiss(animated: true, completion: nil)
+            }))
+            
+            self.navigationController?.present(alertController, animated: true, completion: nil)
+            
+        } else {
+            Utility.showToastWithMessage("Thiết bị không hỗ trợ Camera".localized)
+        }
+
+    }
+    
+    func noCamera(){
+        
+        if #available(iOS 8.0, *) {
+            let alertVC = UIAlertController(
+                title: "Không có camera".localized,
+                message: "Thiết bị không hỗ trợ Camera".localized,
+                preferredStyle: .alert)
+            
+            let okAction = UIAlertAction(
+                title: "Đồng ý".localized,
+                style:.default,
+                handler: nil)
+            
+            alertVC.addAction(okAction)
+            self.present(alertVC, animated: true, completion: nil)
+        }
+            
+        else {
+            // Fallback on earlier versions
+        }
     }
     
     var placePicker: GMSPlacePicker?
@@ -60,10 +153,86 @@ class StatusCreationViewController: CTViewController {
                 print("Place name \(place.name)")
                 print("Place address \(place.formattedAddress)")
                 print("Place attributions \(place.attributions)")
-                self.locationButton.setTitle("\(place.name) - \(place.formattedAddress)", for: .normal)
+                var address = ""
+                if let addressT = place.formattedAddress {
+                    address = addressT
+                }
+                
+                self.locationButton.setTitle("\(place.name) - \(address)", for: .normal)
             } else {
                 print("No place selected")
             }
         })   
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "PickCategories" {
+            if let vc = segue.destination as? CategoriesTableViewController {
+                vc.baseVC = self
+            }
+        }
+    }
+    
 }
+
+extension StatusCreationViewController: UIImagePickerControllerDelegate {
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+           // self.ocrImageView.image = image
+            
+            picker.dismiss(animated: true, completion: nil)
+        }
+    }
+    
+}
+
+extension StatusCreationViewController: UICollectionViewDataSource {
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return numberImages.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCell", for: indexPath)
+        let imagePH = self.numberImages[indexPath.row]
+        
+        if let imageView = cell.contentView.viewWithTag(1) as? UIImageView {
+            imageView.image = getAssetThumbnail(asset: imagePH)
+        }
+        
+        return cell
+    }
+    
+    func getAssetThumbnail(asset: PHAsset) -> UIImage {
+        let manager = PHImageManager.default()
+        let option = PHImageRequestOptions()
+        var thumbnail = UIImage()
+        option.isSynchronous = true
+        manager.requestImage(for: asset, targetSize: CGSize(width: 100, height: 100), contentMode: .aspectFit, options: option, resultHandler: {(result, info)->Void in
+            thumbnail = result!
+        })
+        return thumbnail
+    }
+    
+}
+
+extension StatusCreationViewController: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: IndexPath) -> CGSize {
+        
+        return CGSize(width: collectionView.getSize().width / 3 - 5 ,height: (collectionView.getSize().width / 3 - 5) * 4 / 3 )
+    }
+
+    
+}
+

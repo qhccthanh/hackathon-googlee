@@ -13,21 +13,21 @@ class LocationManager: NSObject {
     
     static let locationManager = LocationManager()
     
-    func requestPermission {
-        
-    }
-    
-    func getCurrentLocation {
-    }
-    
-    func checkPermission {
-        
-    }
-    
-    func enableUpdateLocation {
-        
-    }
-    
-    func disableUpdateLocation {
-    }
+//    func requestPermission {
+//        
+//    }
+//    
+//    func getCurrentLocation {
+//    }
+//    
+//    func checkPermission {
+//        
+//    }
+//    
+//    func enableUpdateLocation {
+//        
+//    }
+//    
+//    func disableUpdateLocation {
+//    }
 }

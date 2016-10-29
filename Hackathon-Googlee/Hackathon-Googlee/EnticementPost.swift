@@ -9,11 +9,15 @@
 import UIKit
 
 enum Category : Int {
+    
     case GapMat = 0
     case ChoiGame
-    case DiChoiXa
+    case DiDuLich
     case ThamGiaSuKien
     case ChuyenDo
+    case TanGau
+    case DiAn
+    
 }
 
 class EnticementPost: NSObject {

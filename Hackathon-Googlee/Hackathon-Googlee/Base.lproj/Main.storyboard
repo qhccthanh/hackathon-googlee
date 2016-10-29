@@ -506,7 +506,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="pickCategoriesAction:" destination="Fj8-5b-jEt" eventType="touchUpInside" id="4NM-9P-DCS"/>
-                                    <segue destination="O9V-Yj-g37" kind="show" id="KsB-FK-R0b"/>
+                                    <segue destination="O9V-Yj-g37" kind="show" identifier="PickCategories" id="KsB-FK-R0b"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Số người mong muốn: ..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g2m-vB-aT4">
@@ -514,22 +514,76 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="naM-YT-MjJ">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="zNA-yS-ErW">
+                                    <size key="itemSize" width="124" height="164"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="center" reuseIdentifier="ImageCell" id="1U6-oz-BA0">
+                                        <rect key="frame" x="0.0" y="0.0" width="124" height="164"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="124" height="164"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SVG-FK-8PD"/>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="SVG-FK-8PD" firstAttribute="top" secondItem="1U6-oz-BA0" secondAttribute="top" id="EGu-Yq-tPe"/>
+                                            <constraint firstAttribute="bottom" secondItem="SVG-FK-8PD" secondAttribute="bottom" id="MXf-SG-BdI"/>
+                                            <constraint firstAttribute="trailing" secondItem="SVG-FK-8PD" secondAttribute="trailing" id="OPR-l6-DAM"/>
+                                            <constraint firstItem="SVG-FK-8PD" firstAttribute="leading" secondItem="1U6-oz-BA0" secondAttribute="leading" id="Ocz-49-udC"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="Fj8-5b-jEt" id="bAQ-IQ-wc1"/>
+                                    <outlet property="delegate" destination="Fj8-5b-jEt" id="DKE-QY-y0b"/>
+                                </connections>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="56a-c1-vK4">
+                                <color key="backgroundColor" red="0.31372549020000001" green="0.65098039220000004" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Chọn ảnh (nếu có)">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="pickImageAction:" destination="Fj8-5b-jEt" eventType="touchUpInside" id="LHD-bT-2Ek"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="naM-YT-MjJ" firstAttribute="trailing" secondItem="U6s-f4-ld0" secondAttribute="trailing" id="2Mz-xv-isL"/>
+                            <constraint firstItem="56a-c1-vK4" firstAttribute="trailing" secondItem="U6s-f4-ld0" secondAttribute="trailing" id="BqI-dX-yAo"/>
                             <constraint firstItem="pc5-wy-ore" firstAttribute="leading" secondItem="zs1-zh-0lE" secondAttribute="leading" constant="8" id="CdJ-9u-hBh"/>
                             <constraint firstItem="g2m-vB-aT4" firstAttribute="trailing" secondItem="ME2-Qs-IGg" secondAttribute="trailing" id="LBN-c7-RCB"/>
                             <constraint firstItem="U6s-f4-ld0" firstAttribute="trailing" secondItem="ME2-Qs-IGg" secondAttribute="trailing" id="NB8-Ww-g3e"/>
                             <constraint firstItem="pc5-wy-ore" firstAttribute="top" secondItem="BPd-aI-yzf" secondAttribute="bottom" constant="15" id="PJf-uV-nfE"/>
                             <constraint firstItem="ME2-Qs-IGg" firstAttribute="leading" secondItem="pc5-wy-ore" secondAttribute="leading" id="Pke-t0-J7v"/>
+                            <constraint firstItem="naM-YT-MjJ" firstAttribute="top" secondItem="56a-c1-vK4" secondAttribute="bottom" constant="8" id="REX-sT-UMy"/>
+                            <constraint firstItem="56a-c1-vK4" firstAttribute="leading" secondItem="U6s-f4-ld0" secondAttribute="leading" id="SQe-fV-2n8"/>
                             <constraint firstAttribute="trailing" secondItem="pc5-wy-ore" secondAttribute="trailing" constant="8" id="T8F-Xq-xI0"/>
                             <constraint firstItem="U6s-f4-ld0" firstAttribute="leading" secondItem="ME2-Qs-IGg" secondAttribute="leading" id="UVD-q5-A9u"/>
                             <constraint firstItem="ME2-Qs-IGg" firstAttribute="top" secondItem="g2m-vB-aT4" secondAttribute="bottom" constant="8" id="crv-RF-oVA"/>
+                            <constraint firstItem="naM-YT-MjJ" firstAttribute="leading" secondItem="U6s-f4-ld0" secondAttribute="leading" id="dbt-y9-hOv"/>
+                            <constraint firstItem="56a-c1-vK4" firstAttribute="height" secondItem="U6s-f4-ld0" secondAttribute="height" id="eG7-2J-5w3"/>
                             <constraint firstItem="ME2-Qs-IGg" firstAttribute="trailing" secondItem="pc5-wy-ore" secondAttribute="trailing" id="jkE-fn-WqX"/>
                             <constraint firstItem="g2m-vB-aT4" firstAttribute="leading" secondItem="ME2-Qs-IGg" secondAttribute="leading" id="jkQ-Zr-mWn"/>
                             <constraint firstItem="U6s-f4-ld0" firstAttribute="height" secondItem="ME2-Qs-IGg" secondAttribute="height" id="mdz-z0-Hmg"/>
+                            <constraint firstItem="fGC-v3-HWp" firstAttribute="top" secondItem="naM-YT-MjJ" secondAttribute="bottom" constant="8" id="nMs-ne-nOZ"/>
                             <constraint firstItem="U6s-f4-ld0" firstAttribute="top" secondItem="ME2-Qs-IGg" secondAttribute="bottom" constant="8" id="qVg-xt-Kw4"/>
                             <constraint firstItem="g2m-vB-aT4" firstAttribute="top" secondItem="pc5-wy-ore" secondAttribute="bottom" constant="10" id="sI2-iU-wFA"/>
+                            <constraint firstItem="56a-c1-vK4" firstAttribute="top" secondItem="U6s-f4-ld0" secondAttribute="bottom" constant="8" id="yML-QZ-nuU"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Tạo sự kiện" id="L2G-kp-wpy">
@@ -545,6 +599,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="categoriesButton" destination="ME2-Qs-IGg" id="USC-JY-8hF"/>
+                        <outlet property="imaegCollectionView" destination="naM-YT-MjJ" id="gE9-jL-cBw"/>
+                        <outlet property="imageButton" destination="56a-c1-vK4" id="RfD-5q-WDm"/>
                         <outlet property="locationButton" destination="U6s-f4-ld0" id="Zpg-ab-564"/>
                         <outlet property="numberPerson" destination="g2m-vB-aT4" id="eCg-Bv-npJ"/>
                         <outlet property="textView" destination="pc5-wy-ore" id="p7e-4v-ReW"/>
@@ -552,7 +608,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dcR-F3-nWK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2414" y="-281"/>
+            <point key="canvasLocation" x="2413.125" y="-282.04225352112678"/>
         </scene>
         <!--Chọn loại-->
         <scene sceneID="OGG-WI-avJ">
@@ -569,7 +625,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelectionDuringEditing="YES" allowsMultipleSelectionDuringEditing="YES" rowHeight="38" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="eC5-jH-S8x">
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="InfoCell" editingAccessoryType="checkmark" rowHeight="38" id="m0C-SI-VD3">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="InfoCell" rowHeight="38" id="m0C-SI-VD3">
                                         <rect key="frame" x="0.0" y="56" width="320" height="38"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="m0C-SI-VD3" id="qNo-Hw-SaT">
@@ -620,6 +676,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="categoriesTableView" destination="eC5-jH-S8x" id="wbm-Na-XJO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wdd-sc-s12" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
