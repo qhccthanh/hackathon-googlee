@@ -42,9 +42,8 @@ class MainViewController: CTViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
 }
-
-
 
 extension MainViewController: UITableViewDataSource {
     

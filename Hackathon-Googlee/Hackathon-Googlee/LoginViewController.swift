@@ -19,6 +19,8 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDeleg
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        RequestManager.sharedInstance
+        
         // Do any additional setup after loading the view, typically from a nib.
         GIDSignIn.sharedInstance().uiDelegate = self
         GIDSignIn.sharedInstance().delegate = self
@@ -48,24 +50,24 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDeleg
         // Dispose of any resources that can be recreated.
     }
     
-    func signInWillDispatch(signIn: GIDSignIn!, error: NSError!) {
+    func sign(inWillDispatch signIn: GIDSignIn!, error: Error!) {
       //  myActivityIndicator.stopAnimating()
     }
     
     // Present a view that prompts the user to sign in with Google
-    func signIn(signIn: GIDSignIn!,
-                presentViewController viewController: UIViewController!) {
+    func sign(_ signIn: GIDSignIn!,
+              present viewController: UIViewController!) {
         self.present(viewController, animated: true, completion: nil)
     }
     
     // Dismiss the "Sign in with Google" view
-    func signIn(signIn: GIDSignIn!,
-                dismissViewController viewController: UIViewController!) {
+    func sign(_ signIn: GIDSignIn!,
+              dismiss viewController: UIViewController!) {
         self.dismiss(animated: true, completion: nil)
     }
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
-        if let error = error {
+        if error != nil {
             //self.showMessagePrompt(error.localizedDescription)
             return
         }
@@ -76,14 +78,11 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDeleg
         // ...
         FIRAuth.auth()?.signIn(with: credential) { (user, error) in
             // ...
+            if let VC = Utility.getViewControllerWithClass(MainViewController.classForCoder()) {
+                self.present(VC, animated: true, completion: { 
+                    
+                })
+            }
         }
-    }
-    
-    @IBAction func didTapSignIn(sender: AnyObject) {
-        GIDSignIn.sharedInstance().signIn()
-    }
-    
-    @IBAction func didTapSignOut(sender: AnyObject) {
-        GIDSignIn.sharedInstance().signOut()
     }
 }
