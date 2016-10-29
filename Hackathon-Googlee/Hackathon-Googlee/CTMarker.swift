@@ -11,8 +11,25 @@ import GoogleMaps
 
 class CTMarker : GMSMarker {
     
-    func initWithIdentifier(_ identifier: String!, location: CLLocation, title: String?, image: UIImage?) {
+    public var identifier: String!
+    
+    override init(){
+        super.init()
         
+        identifier = ""
+    }
+}
+
+class CTMarkerCreation : NSObject {
+    
+    public func markerWithIdentifier(_ identifier: String!, position: CLLocation, title: String?, image: UIImage?) -> CTMarker {
         
+        let marker = CTMarker()
+        marker.identifier = identifier
+        marker.position = position.coordinate
+        marker.title = title
+        marker.icon = image
+        
+        return marker
     }
 }

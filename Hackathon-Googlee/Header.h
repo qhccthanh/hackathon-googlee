@@ -16,5 +16,6 @@
 
 #import "YLExtDefines.h"
 #import "STPopup.h"
+#import "MBProgressHUD.h"
 
 #endif /* Header_h */

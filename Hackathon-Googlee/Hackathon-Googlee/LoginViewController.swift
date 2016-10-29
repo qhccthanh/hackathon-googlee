@@ -32,7 +32,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDeleg
         
         self.view.addSubview(self.googleLoginButton)
         
-        let topLayout = NSLayoutConstraint(item: self.googleLoginButton, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: self.logoImage, attribute: NSLayoutAttribute.bottom, multiplier: 1, constant: 16)
+        let topLayout = NSLayoutConstraint(item: self.googleLoginButton, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: self.logoImage, attribute: NSLayoutAttribute.bottom, multiplier: 1, constant: 30)
         
         let centerX = NSLayoutConstraint(item: self.googleLoginButton, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.centerX, multiplier: 1, constant: 0)
         
@@ -72,6 +72,8 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDeleg
             return
         }
         
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+        
         let authentication = user.authentication
         let credential = FIRGoogleAuthProvider.credential(withIDToken: (authentication?.idToken)!,
                                                           accessToken: (authentication?.accessToken)!)
@@ -80,7 +82,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDeleg
             // ...
             if let VC = Utility.getViewControllerWithClass(MainViewController.classForCoder()) {
                 self.present(VC, animated: true, completion: { 
-                    
+                    MBProgressHUD.hide(for: self.view, animated: true)
                 })
             }
         }
