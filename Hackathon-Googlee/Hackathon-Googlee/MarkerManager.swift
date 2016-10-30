@@ -7,17 +7,26 @@
 //
 
 import Foundation
+import GoogleMaps
 
 class MarkerManager: NSObject {
     
-    private var markerList: [CTMarker]!
+    private var markerList = [CTMarker]()
+    private var mapView: GMSMapView!
     
     override init(){
         super.init()
     }
     
+    init(withMapView _mapView: GMSMapView) {
+        super.init()
+        
+        mapView = _mapView
+    }
+    
     func addMarker(_ marker: CTMarker) {
         markerList.append(marker)
+        marker.map = mapView
     }
     
     func removeMarkerWithIdentifier(_ identifier: String) {
@@ -31,6 +40,7 @@ class MarkerManager: NSObject {
         }
         
         for marker in arrayFilter {
+            marker.map = nil
             markerList.remove(at: markerList.index(of: marker)!)
         }
     }

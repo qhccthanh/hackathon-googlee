@@ -10,10 +10,13 @@ import Foundation
 import UIKit
 import GoogleMaps
 
+
 class MainViewController: CTViewController {
     
     @IBOutlet weak var tableView: UITableView?
     weak var mapView: GMSMapView!
+    var markerManager: MarkerManager?
+    
   //  var datasources: [EnticementPostProtocol] = []
 //    case ChoiGame = 0
 //    case DiAn
@@ -87,6 +90,16 @@ class MainViewController: CTViewController {
                     print(self.tableView)
                     self.tableView?.reloadData()
                     self.flag = true
+                    self.markerManager = MarkerManager(withMapView: self.mapView)
+                    
+                    for item in EnticementPostManager.manager.list.internalArray {
+                        let item1 = item as! EnticementPost
+                        
+                        let pos = CLLocation(latitude: item1.hostLatLocation!, longitude: item1.hostLongLocation!)
+                        
+                        let marker = CTMarkerCreation().markerWithIdentifier(item1.postID!, position: pos, title: item1.content, image: nil)
+                        self.markerManager?.addMarker(marker)
+                    }
                 }
             }
         }
@@ -171,6 +184,7 @@ class MainViewController: CTViewController {
             
             self.mapView.animate(to: GMSCameraPosition(target: CLLocationCoordinate2D(latitude: location.coordinate.latitude,longitude: location.coordinate.longitude), zoom: 16, bearing: 0, viewingAngle: 0))
         }
+        self.tableView?.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
     }
     
     override func didReceiveMemoryWarning() {
@@ -267,7 +281,8 @@ extension MainViewController: UITableViewDataSource {
     
     func touchLocationCellAction(_ sender: CBButton!) {
         let id = sender.id
-        
+        self.tableView?.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
+
         if let item = EnticementPostManager.manager.list.internalArray[id!] as? EnticementPost {
             let location = CLLocationCoordinate2D(latitude: item.hostLatLocation!, longitude: item.hostLongLocation!)
             
