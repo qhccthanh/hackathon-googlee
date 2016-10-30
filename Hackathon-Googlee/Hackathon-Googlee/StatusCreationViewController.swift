@@ -89,8 +89,8 @@ class StatusCreationViewController: CTViewController {
 
             
             let newPost = EnticementPost.init(withDictionary: dict)
-            EnticementPostManager.manager.add(newItem: newPost)
-            
+//            EnticementPostManager.manager.add(newItem: newPost)
+//            EnticementPostManager.manager.list.internalArray.insert(newItem, at: 0)
             print(newPost)
             newPost.pushData2Server()
             _ = self.navigationController?.popViewController(animated: true)
